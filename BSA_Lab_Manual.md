@@ -12,13 +12,71 @@
 
 Explain what the "Analyses", "Apps", and "Data" buttons do on the DE desktop
 
-## Check read quality
+## Add the data folder to your favorites
 
-(Info on FastQ file format)
+OOPS FAVORITES MAY NOT WORK
 
-(questions about results)
+Your life will be __much__ easier if  you create a favorite for the folder that that contains the data for this lab.
+
+Click on `Data`.  The navigate to `Shared with me`.  Scroll down and click on `sharmer`.  Click on the `...` next to the `mcb160l` folder and select `add to favorites` 
 
 ## Map reads to Columbia reference genome
+
+Click on Apps
+
+![](figs/CyverseDesktopApps.png)
+
+Type `bowtie2` in the search bar and then scroll the results until you find Bowtie2-Map-SortBam Workflow by Reetu Tuteja.
+
+![](figs/Bowtie2AppSearch.png)
+
+Click on the app name.
+
+### Analysis Name, etc.
+
+You can leave the Analysis Name, Comments, and Output Folder with the default settings.
+
+![](figs/Bowtie_screen1.png)
+
+### Input files
+
+Click on `bowtie2-2.2.4-align-ud - Input files`
+
+For `Bowtie2 index name:` input `TAIR10_chr_all` __Caps matter__ enter it exactly as shown.
+
+For `index folder` click on `Browse` and navigate to `Shared with me > sharmer > mcb160l` and then select `reference` and click OK
+
+![](figs/ReferenceFolder.png)
+
+Leave `Left reads` and `Right reads` blank
+
+For `Unpaired reads`, click on `Browse` and navigate to `Shared with me > sharmer > mcb160l` and then click on the mutant you were assigned (`EMSXX`).  Finally select the `fastq` file (`EMSXX.fastq` ) and click OK.  (Instead of XX you will have two numbers)
+
+![](figs/EMS01fastq.png)
+
+When you are done it should look something like this:
+
+![](figs/Bowtie2InputFiles)
+
+### bowtie2-2.2.4-align-ud - Output files
+
+You can leave `bowtie2-2.2.4-align-ud - Output files` set to its default
+
+### Samtools 1.11 Sort BAM file - Output file
+
+Click on this and select "BAM" for `Output file format`
+
+![](figs/Bowtie2SortOut.png)
+
+Now click "Launch Analysis"
+
+You can check on the status by clicking on the Analysis button and then pressing refresh
+
+
+
+
+
+
 
 (Info about BAM files)
 
@@ -46,4 +104,10 @@ The app will run the following steps:
 
 Which of the possible mutations is likely to actually cause the mutant phenotype?  __SHOREmap annotate__ identifies which candidate SNPS are in genes and predicted to cause coding changes.
 
+## Check read quality
 
+(Info on FastQ file format)
+
+(questions about results)
+
+While your Bowtie2 analysis is running let's check the quality of reads in our fastq file.  (Normally we would do this first, but beacause Bowtie2 takes a long time to run we started it first)
