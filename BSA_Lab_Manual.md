@@ -18,6 +18,8 @@ Your life will be __much__ easier if  you create a favorite for the folder that 
 
 Click on `Data`.  The navigate to `Shared with me`.  Scroll down and click on `sharmer`.  Click on the `...` next to the `mcb160l` folder and select `add to favorites` 
 
+___ 
+
 ## Map reads to Columbia reference genome
 
 Click on Apps
@@ -73,6 +75,17 @@ You can check on the status by clicking on the Analysis button and then pressing
 (Info about BAM files)
 
 (should maybe run flagstat to assess how well the mapping worked)
+
+___
+## Check read quality
+
+(Info on FastQ file format)
+
+(questions about results)
+
+While your Bowtie2 analysis is running, check the quality of reads in your fastq file.  (Normally we would do this first, but because Bowtie2 takes a long time to run we started it first)
+
+___
 
 ## Call SNPs
 
@@ -136,6 +149,8 @@ Now click `Launch Analysis`
 
 As before, click on the `Analyses` button and click `refresh` a few times to make sure it is running didn't fail in the first few minutes.
  
+ ___
+ 
 ## Run SHOREmap 
 
 We have already identified SNPs where Col and Ler differ for you.  These are in the `insert file name`
@@ -148,14 +163,9 @@ The app will run the following steps:
 * __SHOREmap extract__ will extract the F2 sequence to only retain positions where Col and Ler differ
 * __SHOREmap outcross__ actually does the analysis and produced plots to visualize candidate regions
 
+___
+
 ## Run SHOREmap annotate
 
 Which of the possible mutations is likely to actually cause the mutant phenotype?  __SHOREmap annotate__ identifies which candidate SNPS are in genes and predicted to cause coding changes.
 
-## Check read quality
-
-(Info on FastQ file format)
-
-(questions about results)
-
-While your Bowtie2 analysis is running let's check the quality of reads in our fastq file.  (Normally we would do this first, but beacause Bowtie2 takes a long time to run we started it first)
