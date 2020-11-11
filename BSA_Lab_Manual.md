@@ -56,7 +56,7 @@ For `Unpaired reads`, click on `Browse` and navigate to `Shared with me > sharme
 
 When you are done it should look something like this:
 
-![](figs/Bowtie2InputFiles)
+![](figs/Bowtie2InputFiles.png)
 
 ### bowtie2-2.2.4-align-ud - Output files
 
@@ -70,7 +70,7 @@ Click on this and select "BAM" for `Output file format`
 
 Now click "Launch Analysis"
 
-You can check on the status by clicking on the Analysis button and then pressing refresh
+You can check on the status by clicking on the Analysis button and then pressing refresh.  Make sure that the status changes to `running` and check back after a few minutes to make sure it is still `running`.  If it switches to `failed` something went wrong.  It will take between 1 and 2 hours to complete, depending on which data set you are using.
 
 
 
