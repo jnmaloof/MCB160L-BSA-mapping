@@ -16,7 +16,17 @@ Explain what the "Analyses", "Apps", and "Data" buttons do on the DE desktop
 
 Your life will be __much__ easier if  you create a favorite for the folder that that contains the data for this lab.
 
-Click on `Data`.  The navigate to `Shared with me`.  Scroll down and click on `sharmer`.  Click on the `...` next to the `mcb160l` folder and select `add to favorites` 
+Click on `Data`.  
+
+![](figs/DEData.png)
+
+Then navigate to `Shared with me`.  Scroll down and click on `sharmer`.  
+
+![](figs/SharedSharmer.png)
+
+Next, click on the `...` next to the `mcb160l` folder and select `add to favorites` 
+
+![](figs/Favorites.png)
 
 --- 
 
