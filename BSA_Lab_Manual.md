@@ -85,6 +85,8 @@ ___
 
 While your Bowtie2 analysis is running, check the quality of reads in your fastq file.  (Normally we would do this first, but because Bowtie2 takes a long time to run we started it first)
 
+__STILL NEED TO FILL THIS IN__
+
 ___
 
 ## Call SNPs
@@ -115,7 +117,7 @@ Once you have it selected the window should look like this:
 
 ![](figs/BCFtoolsInput2.png)
 
-## BCFtools 1.10 mpileup - Input options
+### BCFtools 1.10 mpileup - Input options
 
 For `faidx indexed reference sequence file:`  Click `Browse` then `favorites > mcb160L > reference ` and select the file `TAIR10_chr_all.fas` and click `OK`.
 
@@ -148,6 +150,11 @@ Click "Keep alternative alleles"
 Now click `Launch Analysis`
 
 As before, click on the `Analyses` button and click `refresh` a few times to make sure it is running didn't fail in the first few minutes.
+ 
+ ___
+ ## IGV
+ 
+ __STILL NEED TO COMPLETE THIS__
  
  ___
  
