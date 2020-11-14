@@ -9,62 +9,52 @@
 
 (Discussion of vcf files)
 
-We next want to find those positions where the reads from our F2s differ from the reference genome, and where they match.  We will use `bcftools mpileup and call`.  `bcftools mpileup` counts up all the reads at each position in the genome and tallies how many match the reference and how many are different.  `bcftools call` then takes this information and computes statistics to determine the likelihood of _true_ variation (as opposed to sequencing error) at each location.  
+We next want to find those positions where the reads from our F2s differ from the reference genome, and where they match.  We will use `bcftools mpileup and call`.  `bcftools mpileup` counts up all the reads at each position in the genome and tallies how many match the reference and how many are different.  `bcftools call` then takes this information and computes statistics to determine the likelihood of _true_ variation (as opposed to sequencing error) at each location.  These programs produce a `vcf` file, a common format for genomic SNP information.
 
-Click on the `Apps` button and search for "bcftools 1.10 mpileup".  Select the `bcftools 1.10 mpileup and call` app by Julin Maloof.
+We also will convert the vcf file to a format that can be understood by our mapping program, SHOREmap.
 
-![](figs/BCFtoolsAppSelection.png)
+We have combined the bcftools mpileup, call, and SHOREmap convert into a single app that will run these steps together.
+
+Click on the `Apps` button and search for "BAM-to-SHORE". 
+
+![](figs/bam2shore-select.png)
+
+Next click on the three buttons to the right of the `BAM-to-SHOREmap` application and then select `Quick Launch`.  
+
+![](figs/bam2shore-quicklaunch1.png)
+
+
+# FIXME
+Finally, select `MCB160L` from the quick launch menu
+![](figs/bam2shore-quicklaunch2.png)
 
 You can leave the first part (Analysis name and output folder as default)
 
-![](figs/BcftoolsApp1.png)
+![](figs/bam2shore-input1.png)
 
 ### BCFtools 1.10 mpileup - Input data
 
+Click on `BCFtools 1.10 mpileup - Input data`
+
 Here you want to use the bam file that you created by running bowtie above.  
 
-Click the "add" button, navigate to your `analyses` folder, click on the `Bowtie2-Ma-SortBam...` folder and then select the `output_sorted.bam` file and click OK
+Click the "add" button, navigate to your `analyses` folder, click on the `Bowtie2-Map-SortBam...` folder and then select the `output_sorted.bam` file and click OK
 
-![](figs/BCFtoolsInput.png)
+![](figs/bam2shore-input-bam.png)
 
 Once you have it selected the window should look like this:
 
-![](figs/BCFtoolsInput2.png)
-
-### BCFtools 1.10 mpileup - Input options
-
-For `faidx indexed reference sequence file:`  Click `Browse` then `favorites > mcb160L > reference ` and select the file `TAIR10_chr_all.fas` and click `OK`.
-
-![](figs/ChooseFaidx.png)
-
-The rest of this section can be left blank.
-
-Once you have the file selected your window should look like this:
-
-![](figs/BCFtoolsFAIDXInput.png)
-
-### Skip down to BCFtools 1.10 call - File format options
-
-Add `.vcf` to the end of the output file name, to that you have `bcftools_call_output.vcf`
-
-Change file type to `Uncompressed VCF`
-
-Leave Regions file, Samples file, and Targets file all blank
-
-![](figs/BCFtoolsFileFormat.png)
-
-### BCFtools 1.10 call - Filter options
-
-Click "Keep alternative alleles"
-
-![](figs/BCFtoolsKeepAlternative.png)
+![](figs/bam2shore-input-bam2.png)
 
 ### Launch it
 
-Now click `Launch Analysis`
+The remaining settings can be left at their default values.  
+
+Time to launch! Click `Launch Analysis`
 
 As before, click on the `Analyses` button and click `refresh` a few times to make sure it is running didn't fail in the first few minutes.
 
+# FIXME
 This will take between 40 minutes and one hour to run.
  
 ---
