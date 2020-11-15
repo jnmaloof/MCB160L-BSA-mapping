@@ -54,8 +54,7 @@ Time to launch! Click `Launch Analysis`
 
 As before, click on the `Analyses` button and click `refresh` a few times to make sure it is running didn't fail in the first few minutes.
 
-# FIXME
-This will take between 40 minutes and one hour to run.
+This will take 1-2 hours to run (closer to 2 for most data sets)
  
 ---
  ## IGV
