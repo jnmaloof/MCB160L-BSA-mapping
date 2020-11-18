@@ -21,7 +21,7 @@ Click on the `Apps` button and search for SHOREmap.  You want `SHOREmap extract`
 
 ![](figs/ExtractAppQL.png)
 
-Choose the MCB160L Quick Launch.
+Choose the MCB160L Quick Launch and click on the arrowhead.
 
 ### Inputs
 
