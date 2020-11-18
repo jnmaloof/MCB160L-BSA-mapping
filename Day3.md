@@ -3,9 +3,6 @@
 
 ## Intro
 
- 
-## Run SHOREmap 
-
 SHOREmap is a program that analyzes bulked segregant mutant F2 data and identifies candidate regions of the genome that may harbor the causative mutation.
 
 In areas of the genome not linked to the causative mutation we expect Col alleles  to have a frequency of ~ 0.5.  In the area of the genome that harbors the mutation the Col allele frequency should go to ~ 1.0.  SHOREmap highlights the regions of the genome where the allele frequency skews towards homozygous Columbia.
@@ -20,23 +17,28 @@ We need to run three different SHOREmap programs:
 
 ## SHOREmap extract
 
-Click on the `Apps` button and search for SHOREmap.  You want `SHOREmap extract` by REETU TUTEJA.  Click on the 3 dots to the right of the app and then on Quick Launch.  Choose the MCB160L Quick Launch.
+Click on the `Apps` button and search for SHOREmap.  You want `SHOREmap extract` by REETU TUTEJA.  Click on the 3 dots to the right of the app and then on Quick Launch.
 
 ![](figs/ExtractAppQL.png)
 
+Choose the MCB160L Quick Launch.
+
 ### Inputs
 
-* `Chromosome Size File` provides the length of each chromosome.  This has been filled in for you.
+Click on `Inputs` and adjust:
+
+* `Chromosome Size File` provides the length of each chromosome.  This has been filled in for you and does not need to be changed.
 * `Consensus file`.  This the data from YOUR cross.  Click on `Browse`.  Navigate to your `analyses` folder, then the `SHOREmap convert` folder from Day 2.  Finally click on the `convert` folder, then select `3_converted_consen.txt` and click OK.
-* `Candidate Marker Input` provides a list of known SNPs segregrating between Col and Ler.  This has been calculated and filled in for you.
 
 ![](figs/ExtractSelectConvert2.png)
+
+* `Candidate Marker Input` provides a list of known SNPs segregrating between Col and Ler.  This has been calculated and filled in for you.
 
 When you are done your input window should look something like this:
 
 ![](figs/ExtractInputs.png)
 
-Click `Launch`! This will take between 10 and 15 minutes to run.
+Click `Launch Analysis`! This will take between 10 and 15 minutes to run.
 ___
 ## SHOREmap outcross
 
@@ -44,7 +46,7 @@ Click on the `Apps` button and search for SHOREmap.  You want `SHOREmap outcross
 
 ![](figs/OutcrossAppQL.png)
 
-Choose the Quick Launch that matches the mutation you have been assigned.
+Choose the Quick Launch that matches the EMSXX mutation you have been assigned.
 
 ### Input
 
@@ -75,7 +77,7 @@ Scroll through the pages until you find a chromosome with a peak, something like
 * The x-axis is position along the chromosome
 * The y-axis is the allele frequency, with 1 = all Col and 0 = all Ler.  
 * Each red circle represents a SNP.  
-* The blue line is allele frequency averaged over 20,000 bp
+* The blue line is allele frequency averaged over 200,000 bp
 * The gray line is the "boost" score, a statistic to boost signal relative to noise.
 * The horizontal teal bar under the peak on the x-axis shows the predicted candidate interval for the gene. The coordinates of this are also give in the last line of text.
 
@@ -92,7 +94,7 @@ Click on the `Apps` button.  Search for `SHOREmap`, find `SHOREMAP annotate` by 
 
 ![](figs/AnnotateApp.png)
 
-Next select `MCB160L-annotate`.
+Next select the `MCB160L` Quick Launch.
 
 ### Inputs:
 
