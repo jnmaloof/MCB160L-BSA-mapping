@@ -23,13 +23,10 @@ Next click on the three buttons to the right of the `BAM-to-SHOREmap` applicatio
 
 ![](figs/bam2shore-quicklaunch1.png)
 
-
-# FIXME
-Finally, select `MCB160L` from the quick launch menu
+Finally, select `MCB160L` from the quick launch menu and click on the arrowhead.
 ![](figs/bam2shore-quicklaunch2.png)
 
 You can leave the first part (Analysis name and output folder as default)
-
 ![](figs/bam2shore-input1.png)
 
 ### BCFtools 1.10 mpileup - Input data
