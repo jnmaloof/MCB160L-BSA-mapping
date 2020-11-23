@@ -1,8 +1,6 @@
 # Mapping mutants by Bulk Segregant Analysis and Illumina Sequencing
 # Day 1: Map Reads to a Reference Genome
 
-## Intro
-
 ## Using the CyVerse Discovery Environment (DE)
 
 As you saw in the introductory video by Jason Williams, the Discovery Environment allows biologists without advanced coding skills to take advantage of bioinformatics algorithms and advanced computing resources via a point-and-click environment.
@@ -21,7 +19,7 @@ Login to your account.
 
 #### Worksheet activity
 
-Explain what the "Analyses", "Apps", and "Data" buttons do on the DE desktop
+1. Explain what the "Analyses", "Apps", and "Data" buttons do on the DE desktop
 
 ---
 
@@ -78,16 +76,34 @@ The rest of the pages can be left with their default values.  It is time to laun
 
 You can check on the status by clicking on the Analysis button and then pressing refresh.  Make sure that the status changes to `running` and check back after a few minutes to make sure it is still `running`.  If it switches to `failed` something went wrong.  It will take between 1 and 2 hours to complete, depending on which data set you are using.
 
-(Info about BAM files)
+#### Worksheet activities
 
-(should maybe run flagstat to assess how well the mapping worked)
+2. What is the Input file 'reference' that you specified when setting up Bowtie2? Why do you need this file?
+
+3. Think of four different types of information that you think your output file (BAM file) should contain for each read. What are they?
+
 
 ---
-## Check read quality
+## Assessing read quality
 
-(Info on FastQ file format)
+Remember from lecture that the PHRED score provides information on the probability that the identity of each base has been called correctly, with the below ASCII code corresonding to the indicated PHRED values.
 
-(questions about results)
+![](figs/ASCII-PHRED.png)
+
+Recall also that each numeric PHRED score (Q) can be converted to the probability that the base call is **incorrect** (P) using the below equation:
+
+![](figs/quality_equation.png)
+
+#### Worksheet activities
+
+4. For the below FASTQ entry, calculate the probability of an incorrect call for the first two and the last two bases in this sequence.
+
+![](figs/bad_fastq.png)
+
+5. Provide one possible explanation for the difference in probabilities at the beginning and the end of this sequence.
+
+
+## Examine read quality of *your* data
 
 While your Bowtie2 analysis is running, check the quality of reads in your fastq file.  (Normally we would do this first, but because Bowtie2 takes a long time to run we started it first)
 
@@ -126,3 +142,7 @@ Next click on `Go to output folder`
  ![](figs/FastQCout2.png)
 
  Finally, click on the `EMSXX_fastqc.html` file and it will open your report in a new window in your browser.
+
+ #### Worksheet activities
+
+ Answer questions #6 - 11 on your worksheet.
