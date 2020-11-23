@@ -5,15 +5,25 @@
 
 ## Using the CyVerse Discovery Environment (DE)
 
-### Register for an account
+As you saw in the introductory video by Jason Williams, the Discovery Environment allows biologists without advanced coding skills to take advantage of bioinformatics algorithms and advanced computing resources via a point-and-click environment.
 
-### Watch the tutorial
+Although there are many advantages to using these algorithms via the command line, we will take advantage of the Discovery Environment so that you can get experience analzying Next Generation Sequencing data without needing to learn anything about coding.
 
-### Knowledge Check
+The process of porting the specialized mapping software we'll be using (SHOREmap) to the Discovery Environment was accomplished by the generous efforts of Julin Maloof (UC Davis), Reetu Tuteja (CyVerse), and Hequan Sun (Max Planck Institute for Plant Breeding Research, Germany).
+
+### Get started with the Discovery Environment
+
+Go to the [Cyverse](https://www.cyverse.org) home page and launch the Discovery Environment.
+
+![](figs/launch_DE.png)
+
+Login to your account.
+
+#### Worksheet activity
 
 Explain what the "Analyses", "Apps", and "Data" buttons do on the DE desktop
 
---- 
+---
 
 ## Map reads to Columbia reference genome
 
@@ -48,15 +58,15 @@ Click on `bowtie2-2.2.4-align-ud - Input files`
 
 `Bowtie2 index name:` tells the aligner the name of the indexed genome file.  We have filled this in for you, it should read `TAIR10_chr_all`
 
-`index folder` tells the aligner where to find the indexed genome files.  We have filled this in for you.  
+`index folder` tells the aligner where to find the indexed genome files.  We have filled this in for you.
 
 Leave `Left reads` and `Right reads` blank
 
-For `Unpaired reads`, we need to tell the aligner where to find the FASTQ files for your mutant.  click on `Browse` and then  navigate to `Shared with me`.  Scroll down and click on `sharmer`.  
+For `Unpaired reads`, we need to tell the aligner where to find the FASTQ files for your mutant.  click on `Browse` and then  navigate to `Shared with me`.  Scroll down and click on `sharmer`.
 
 ![](figs/SharedSharmer.png)
 
-Next click on `mcb160l`, and then the mutant you were assigned (`EMSXX`).  Finally select the `fastq` file (`EMSXX.fastq` ) and click OK.  (Instead of XX you will have two numbers). 
+Next click on `mcb160l`, and then the mutant you were assigned (`EMSXX`).  Finally select the `fastq` file (`EMSXX.fastq` ) and click OK.  (Instead of XX you will have two numbers).
 
 ![](figs/EMS01fastq.png)
 
@@ -91,7 +101,7 @@ Click on your `Apps` button and enter `fastqc` in the search bar.  Scroll until 
 
 Instead of using a QuickLaunch, just click on the app title to launch it.
 
-Click on `Input` and then "Add".  Navigate to the same fastqc file you used in the step above by clicking on `Shared with me`.  Scroll down and click on `sharmer`.  
+Click on `Input` and then "Add".  Navigate to the same fastqc file you used in the step above by clicking on `Shared with me`.  Scroll down and click on `sharmer`.
 
 ![](figs/SharedSharmer.png)
 
@@ -103,7 +113,7 @@ When you are done your input box should look like this:
 
 Now you can launch by clicking on `Launch Analysis`
 
-This will take about 1 minute to run.
+This can take 5 to 10 minutes to run.
 
 ### Look at the results.
 
@@ -112,8 +122,7 @@ Click on the Analyses button and then click on refresh.  When the FastQC...analy
 ![](figs/FastQCout1.png)
 
 Next click on `Go to output folder`
- 
- ![](figs/FastQCout2.png)
- 
- Finally, click on the `EMSXX_fastqc.html` file and it will open your report in a new window in your browser.
 
+ ![](figs/FastQCout2.png)
+
+ Finally, click on the `EMSXX_fastqc.html` file and it will open your report in a new window in your browser.

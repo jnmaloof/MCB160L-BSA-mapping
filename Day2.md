@@ -15,11 +15,11 @@ We also will convert the vcf file to a format that can be understood by our mapp
 
 We have combined the bcftools mpileup, call, and SHOREmap convert into a single app that will run these steps together.
 
-Click on the `Apps` button and search for "BAM-to-SHORE". 
+Click on the `Apps` button and search for "BAM-to-SHORE".
 
 ![](figs/bam2shore-select.png)
 
-Next click on the three buttons to the right of the `BAM-to-SHOREmap` application and then select `Quick Launch`.  
+Next click on the three buttons to the right of the `BAM-to-SHOREmap` application and then select `Quick Launch`.
 
 ![](figs/bam2shore-quicklaunch1.png)
 
@@ -33,7 +33,7 @@ You can leave the first part (Analysis name and output folder as default)
 
 Click on `BCFtools 1.10 mpileup - Input data`
 
-Here you want to use the bam file that you created by running bowtie above.  
+Here you want to use the bam file that you created by running Bowtiew in the previous session.  
 
 Click the "add" button, navigate to your `analyses` folder, click on the `Bowtie2-Map-SortBam...` folder and then select the `output_sorted.bam` file and click OK
 
@@ -45,16 +45,15 @@ Once you have it selected the window should look like this:
 
 ### Launch it
 
-The remaining settings can be left at their default values.  
+The remaining settings can be left at their default values.
 
 Time to launch! Click `Launch Analysis`
 
 As before, click on the `Analyses` button and click `refresh` a few times to make sure it is running didn't fail in the first few minutes.
 
 This will take 1-2 hours to run (closer to 2 for most data sets)
- 
+
 ---
  ## IGV
- 
+
  __STILL NEED TO COMPLETE THIS__
- 
