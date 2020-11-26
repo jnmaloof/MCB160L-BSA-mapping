@@ -265,17 +265,21 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <h1 class="mume-header" id="day-1-map-reads-to-a-reference-genome">Day 1: Map Reads to a Reference Genome</h1>
 
-<h2 class="mume-header" id="intro">Intro</h2>
-
 <h2 class="mume-header" id="using-the-cyverse-discovery-environment-de">Using the CyVerse Discovery Environment (DE)</h2>
 
-<h3 class="mume-header" id="register-for-an-account">Register for an account</h3>
+<p>As you saw in the introductory video by Jason Williams, the Discovery Environment allows biologists without advanced coding skills to take advantage of bioinformatics algorithms and advanced computing resources via a point-and-click environment.</p>
+<p>Although there are many advantages to using these algorithms via the command line, we will take advantage of the Discovery Environment so that you can get experience analzying Next Generation Sequencing data without needing to learn anything about coding.</p>
+<p>The process of porting the specialized mapping software we&apos;ll be using (SHOREmap) to the Discovery Environment was accomplished by the generous efforts of Julin Maloof (UC Davis), Reetu Tuteja (CyVerse), and Hequan Sun (Max Planck Institute for Plant Breeding Research, Germany).</p>
+<h3 class="mume-header" id="get-started-with-the-discovery-environment">Get started with the Discovery Environment</h3>
 
-<h3 class="mume-header" id="watch-the-tutorial">Watch the tutorial</h3>
+<p>Go to the <a href="https://www.cyverse.org">Cyverse</a> home page and launch the Discovery Environment.</p>
+<p><img src="figs/launch_DE.png" alt></p>
+<p>Login to your account.</p>
+<h4 class="mume-header" id="worksheet-activity">Worksheet activity</h4>
 
-<h3 class="mume-header" id="knowledge-check">Knowledge Check</h3>
-
-<p>Explain what the &quot;Analyses&quot;, &quot;Apps&quot;, and &quot;Data&quot; buttons do on the DE desktop</p>
+<ol>
+<li>Explain what the &quot;Analyses&quot;, &quot;Apps&quot;, and &quot;Data&quot; buttons do on the DE desktop</li>
+</ol>
 <hr>
 <h2 class="mume-header" id="map-reads-to-columbia-reference-genome">Map reads to Columbia reference genome</h2>
 
@@ -306,13 +310,34 @@ pre[data-line] .line-highlight[data-end]:after {
 <p><img src="figs/Bowtie2InputFiles.png" alt></p>
 <p>The rest of the pages can be left with their default values.  It is time to launch the analysis!  Click &quot;Launch Analysis&quot; at the bottom right of the window.</p>
 <p>You can check on the status by clicking on the Analysis button and then pressing refresh.  Make sure that the status changes to <code>running</code> and check back after a few minutes to make sure it is still <code>running</code>.  If it switches to <code>failed</code> something went wrong.  It will take between 1 and 2 hours to complete, depending on which data set you are using.</p>
-<p>(Info about BAM files)</p>
-<p>(should maybe run flagstat to assess how well the mapping worked)</p>
-<hr>
-<h2 class="mume-header" id="check-read-quality">Check read quality</h2>
+<h4 class="mume-header" id="worksheet-activities">Worksheet activities</h4>
 
-<p>(Info on FastQ file format)</p>
-<p>(questions about results)</p>
+<ol start="2">
+<li>
+<p>What is the Input file &apos;reference&apos; that you specified when setting up Bowtie2? Why do you need this file?</p>
+</li>
+<li>
+<p>Think of four different types of information that you think your output file (BAM file) should contain for each read. What are they?</p>
+</li>
+</ol>
+<hr>
+<h2 class="mume-header" id="assessing-read-quality">Assessing read quality</h2>
+
+<p>Remember from lecture that the PHRED score provides information on the probability that the identity of each base has been called correctly, with the below ASCII code corresonding to the indicated PHRED values.</p>
+<p><img src="figs/ASCII-PHRED.png" alt></p>
+<p>Recall also that each numeric PHRED score (Q) can be converted to the probability that the base call is <strong>incorrect</strong> (P) using the below equation:</p>
+<p><img src="figs/quality_equation.png" alt></p>
+<h4 class="mume-header" id="worksheet-activities-1">Worksheet activities</h4>
+
+<ol start="4">
+<li>For the below FASTQ entry, calculate the probability of an incorrect call for the first two and the last two bases in this sequence.</li>
+</ol>
+<p><img src="figs/bad_fastq.png" alt></p>
+<ol start="5">
+<li>Provide one possible explanation for the difference in probabilities at the beginning and the end of this sequence.</li>
+</ol>
+<h2 class="mume-header" id="examine-read-quality-of-your-data">Examine read quality of <em>your</em> data</h2>
+
 <p>While your Bowtie2 analysis is running, check the quality of reads in your fastq file.  (Normally we would do this first, but because Bowtie2 takes a long time to run we started it first)</p>
 <h3 class="mume-header" id="run-fastqc">Run FastQC</h3>
 
@@ -326,7 +351,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <p>When you are done your input box should look like this:</p>
 <p><img src="figs/FastQCInput.png" alt></p>
 <p>Now you can launch by clicking on <code>Launch Analysis</code></p>
-<p>This will take about 1 minute to run.</p>
+<p>This can take 5 to 10 minutes to run.</p>
 <h3 class="mume-header" id="look-at-the-results">Look at the results.</h3>
 
 <p>Click on the Analyses button and then click on refresh.  When the FastQC...analyses status switches to complete, click on the 3 dots to the right</p>
@@ -334,6 +359,8 @@ pre[data-line] .line-highlight[data-end]:after {
 <p>Next click on <code>Go to output folder</code></p>
 <p><img src="figs/FastQCout2.png" alt></p>
 <p>Finally, click on the <code>EMSXX_fastqc.html</code> file and it will open your report in a new window in your browser.</p>
+<h4>Worksheet activities</h4>
+<p>Answer questions #6 - 11 on your worksheet.</p>
 
       </div>
       
