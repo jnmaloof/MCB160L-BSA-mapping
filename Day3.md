@@ -5,9 +5,13 @@
 
 SHOREmap is a program that analyzes bulked segregant mutant F2 data and identifies candidate regions of the genome that may harbor the causative mutation.
 
-In areas of the genome not linked to the causative mutation we expect Col alleles  to have a frequency of ~ 0.5.  In the area of the genome that harbors the mutation the Col allele frequency should go to ~ 1.0.  SHOREmap highlights the regions of the genome where the allele frequency skews towards homozygous Columbia.
+Recall that Pablo Manavella treated seeds from plants of the Col strain with EMS to induce mutations. After screening to identify mutants in the miRNA biogenesis pathway, he outcrossed his Col mutants to wild-type plants of the Ler strain. He then obtained F2 plants from these crosses, isolated between 150 and 200 plants withe mutant phenotype per F2 family, extracted genomic DNA from each plant, and then pooled and sequenced it.
 
-We need to run three different SHOREmap programs:
+At this point, you have run algorithms to map the pooled sequence reads to the Col genome and, using data from other experiments, identified positions that are polymorphic betwen Col and Ler.
+
+In your pooled F2 genomic DNA, we expect Col alleles to have a frequency of ~ 0.5 in all areas of the genome that are not linked to the causative mutation. In contrast, the Col allele frequency should go to ~ 1.0 in the area of the genome that harbors the mutation. *SHOREmap highlights the regions of the genome where the allele frequency skews towards homozygous Columbia.*
+
+To achieve this, today we need to run three different SHOREmap programs:
 
 * __SHOREmap extract.__  This program will subset the F2 data to only retain positions where there are SNPs segregating between Col and Ler.
 * __SHOREmap outcross.__  This program analyzes and plots the F2 data to highlight the candidate region(s) for the mutation
@@ -28,7 +32,7 @@ Choose the MCB160L Quick Launch and click on the arrowhead.
 Click on `Inputs` and adjust:
 
 * `Chromosome Size File` provides the length of each chromosome.  This has been filled in for you and does not need to be changed.
-* `Consensus file`.  This the data from YOUR cross.  Click on `Browse`.  Navigate to your `analyses` folder, then the `BAM-to_SHOREmap` folder from Day 2.  Finally click on the `convert` folder, then select `3_converted_consen.txt` and click OK.
+* `Consensus file`.  This the data from **YOUR** cross.  Click on `Browse`.  Navigate to your `analyses` folder, then the `BAM-to_SHOREmap` folder from Day 2.  Finally click on the `convert` folder, then select `3_converted_consen.txt` and click OK.
 
 ![](figs/ExtractSelectConvert2.png)
 
@@ -38,7 +42,12 @@ When you are done your input window should look something like this:
 
 ![](figs/ExtractInputs.png)
 
-Click `Launch Analysis`! This will take between 10 and 15 minutes to run.
+Click `Launch Analysis`! **This will take between 10 and 15 minutes to run.**
+
+In your worksheet, answer the following question:
+
+1) One file used as an input in the SHOREmap extract algorithm is called ‘SHOREmap_created_F2Pab_specific.txt’. This file, which was created for this lab, consists of a genome-wide list of SNPs between the Col and Ler accesssions. Speculate why and how this information is used at this step of the analysis.
+
 ___
 ## SHOREmap outcross
 
@@ -46,7 +55,7 @@ Click on the `Apps` button and search for SHOREmap.  You want `SHOREmap outcross
 
 ![](figs/OutcrossAppQL.png)
 
-Choose the Quick Launch that matches the EMSXX mutation you have been assigned.
+**Choose the Quick Launch that matches the EMSXX mutation you have been assigned.** Input parameters have been tuned for each mutation for you; normally, some trial and error would be required to obtain a clear-cut output.
 
 ### Input
 
@@ -54,7 +63,7 @@ Click on `Inputs`
 
 * `Chromosome Size File` provides the length of each chromosome.  This has been filled in for you.
 * `Marker File` provides a list of known SNPs segregrating between Col and Ler.  This has been calculated and filled in for you.
-* `Consensus file`.  This the data from YOUR cross.  Click on `Browse`.  Navigate to your `analyses` folder, then the `SHOREmap extract` folder from the previous step.  Finally click on `extract` folder, then select `extracted_consensus_0.txt` and click OK.
+* `Consensus file`.  This the data from **YOUR** cross.  Click on `Browse`.  Navigate to your `analyses` folder, then the `SHOREmap extract` folder from the previous step.  Finally click on `extract` folder, then select `extracted_consensus_0.txt` and click OK.
 
 ![](figs/OutcrossSelectExtract2.png)
 
@@ -64,13 +73,15 @@ When you are done your input window should look something like this:
 
 Now we are ready to launch.  Click the `Launch` button!
 
-This will take about 5 minutes to run.
+**This will take about 5 minutes to run.**
 
 ## View Outcross Results
 
-Refresh the Analyses window after about 5 minutes. Once your SHOREmap outcross run is listed as complete, click on the 3 dots at the right of it and select `Go to output folder`.  In the resulting window, click on the `outcross` folder and then `OC_AF_visualziation_1_boost.pdf`.  This is a 5 page PDF with one page for each chromosome. It is slow to load because so many points are plotted.
+Refresh the Analyses window after about 5 minutes. Once your SHOREmap outcross run is listed as complete, click on the 3 dots at the right of it and select `Go to output folder`.  In the resulting window, click on the `outcross` folder and then `OC_AF_visualziation_1_boost.pdf`.  This is a 5 page PDF with one page for each chromosome.
 
-Scroll through the pages until you find a chromosome with a peak, something like what is shown below (your peak will be in a different location).
+It is slow to load because so many points are plotted.
+
+Scroll through the pages until you find a chromosome with a peak, something like what is shown below (*your peak will be in a different location*).
 
 ![](figs/OutcrossResult.png)
 
@@ -81,14 +92,15 @@ Scroll through the pages until you find a chromosome with a peak, something like
 * The gray line is the "boost" score, a statistic to boost signal relative to noise.
 * The horizontal teal bar under the peak on the x-axis shows the predicted candidate interval for the gene. The coordinates of this are also give in the last line of text.
 
-### Questions:
-Does your mutation map to a single region?
-What chromosomes(s)
-What coordinates?
+
+### Worksheet questions:
+2) Does your mutation map to a single region?
+3) What chromosomes(s) does your mutation map to?
+4) What coordinates?
  ___
 ## Run SHOREmap annotate
 
-Which of the mutations in the candiate region is likely to actually cause the mutant phenotype?  __SHOREmap annotate__ identifies which candidate SNPS are in genes and predicts whether or not they will cause a coding changes.
+Which of the mutations in the candiate region is likely to actually cause the mutant phenotype?  __SHOREmap annotate__ identifies sequences in your pooled F2 reads that differ from those of the reference genome, tells you which of these candidate SNPS are in genes, and predicts whether or not they will cause a coding changes.
 
 Click on the `Apps` button.  Search for `SHOREmap`, find `SHOREMAP annotate` by REETU TUTEJA, click on the three dots to the right of it and select `Quick Launch`.
 
@@ -122,6 +134,25 @@ After about 5 minutes, refresh your analysis screen.  Once SHOREmap annotate is 
 
 ![](figs/AnnotateDownload.png)
 
-Open the file in Excel...
+Open the file in Excel. You'll see that the columns are not labeled.  Go to the
+[SHOREmap guide page](http://bioinfo.mpipz.mpg.de/shoremap/guide.html) and scroll to very bottom. You'll see a table with 16 entries. Label the columns in your Excel file according to the information in this table.
 
-__Stacey to complete from here__
+You can use the Excel sort command to order the entries in your candidate SNP file.
+
+![](figs/excel_sort.png)
+
+### Worksheet questions:
+
+5) First, sort on allele frequency.  What is the general distribution of AF values in your spreadsheet?  (_That is, does it look like an even distribution of values or is it skewed in some way?_)
+
+6) What does allele frequency mean in this case?  That is, what exactly is being compared to generate these values, and what does a large value (close to 1) indicate?
+
+7) Next, sort your spreadsheet on the base quality value. Is there a general relationship between allele frequency and base quality? If so, does this help explain the general distribution of AF values? Explain.
+
+8) Go back and again sort your spreadsheet by allele frequency. Now examine the information given about the region of DNA affected by each polymporphism. Which type of region is most likely to be affected by the mutation causing the phenotype?
+
+9) Now examine the last three columns in your spreadsheet.  The information here should help you further narrow down on the polymorphism most likely to be causing the mutant phenotype. Briefly explain why this information is useful.
+
+10) Data on this spreadsheet should allow you to identify somewhere between two and five mutations that are most likely to be causing your phenotype. Find the gene identifier for each of these candidates.  Write out these gene identifiers on your worksheet. (_Note gene models with the same prefix followed by different numbers, for examle AT1G01080.1 and AT1G01080.2, represent different mRNA splicing variants of the same pre-mRNA. For this lab, only consider the ATXGXXXXX.1 gene models._)
+
+Enter the requested information into the [course Google sheet](https://docs.google.com/spreadsheets/d/1eavWUeG-VVbh4ZLXxyYcHM_g0yMk2xw3X15Yk84B7R4/edit?usp=sharing) by 10 pm this evening. Comparing information with your classmates may help you determine which sequence variant is causing your mutant phenotype.
