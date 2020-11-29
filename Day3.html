@@ -268,8 +268,10 @@ pre[data-line] .line-highlight[data-end]:after {
 <h2 class="mume-header" id="intro">Intro</h2>
 
 <p>SHOREmap is a program that analyzes bulked segregant mutant F2 data and identifies candidate regions of the genome that may harbor the causative mutation.</p>
-<p>In areas of the genome not linked to the causative mutation we expect Col alleles  to have a frequency of ~ 0.5.  In the area of the genome that harbors the mutation the Col allele frequency should go to ~ 1.0.  SHOREmap highlights the regions of the genome where the allele frequency skews towards homozygous Columbia.</p>
-<p>We need to run three different SHOREmap programs:</p>
+<p>Recall that Pablo Manavella treated seeds from plants of the Col strain with EMS to induce mutations. After screening to identify mutants in the miRNA biogenesis pathway, he outcrossed his Col mutants to wild-type plants of the Ler strain. He then obtained F2 plants from these crosses, isolated between 150 and 200 plants withe mutant phenotype per F2 family, extracted genomic DNA from each plant, and then pooled and sequenced it.</p>
+<p>At this point, you have run algorithms to map the pooled sequence reads to the Col genome and, using data from other experiments, identified positions that are polymorphic betwen Col and Ler.</p>
+<p>In your pooled F2 genomic DNA, we expect Col alleles to have a frequency of ~ 0.5 in all areas of the genome that are not linked to the causative mutation. In contrast, the Col allele frequency should go to ~ 1.0 in the area of the genome that harbors the mutation. <em>SHOREmap highlights the regions of the genome where the allele frequency skews towards homozygous Columbia.</em></p>
+<p>To achieve this, today we need to run three different SHOREmap programs:</p>
 <ul>
 <li><strong>SHOREmap extract.</strong>  This program will subset the F2 data to only retain positions where there are SNPs segregating between Col and Ler.</li>
 <li><strong>SHOREmap outcross.</strong>  This program analyzes and plots the F2 data to highlight the candidate region(s) for the mutation</li>
@@ -286,7 +288,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <p>Click on <code>Inputs</code> and adjust:</p>
 <ul>
 <li><code>Chromosome Size File</code> provides the length of each chromosome.  This has been filled in for you and does not need to be changed.</li>
-<li><code>Consensus file</code>.  This the data from YOUR cross.  Click on <code>Browse</code>.  Navigate to your <code>analyses</code> folder, then the <code>SHOREmap convert</code> folder from Day 2.  Finally click on the <code>convert</code> folder, then select <code>3_converted_consen.txt</code> and click OK.</li>
+<li><code>Consensus file</code>.  This the data from <strong>YOUR</strong> cross.  Click on <code>Browse</code>.  Navigate to your <code>analyses</code> folder, then the <code>BAM-to_SHOREmap</code> folder from Day 2.  Finally click on the <code>convert</code> folder, then select <code>3_converted_consen.txt</code> and click OK.</li>
 </ul>
 <p><img src="figs/ExtractSelectConvert2.png" alt></p>
 <ul>
@@ -294,30 +296,35 @@ pre[data-line] .line-highlight[data-end]:after {
 </ul>
 <p>When you are done your input window should look something like this:</p>
 <p><img src="figs/ExtractInputs.png" alt></p>
-<p>Click <code>Launch Analysis</code>! This will take between 10 and 15 minutes to run.</p>
+<p>Click <code>Launch Analysis</code>! <strong>This will take between 10 and 15 minutes to run.</strong></p>
+<p>In your worksheet, answer the following question:</p>
+<ol>
+<li>One file used as an input in the SHOREmap extract algorithm is called &#x2018;SHOREmap_created_F2Pab_specific.txt&#x2019;. This file, which was created for this lab, consists of a genome-wide list of SNPs between the Col and Ler accesssions. Speculate why and how this information is used at this step of the analysis.</li>
+</ol>
 <hr>
 <h2 class="mume-header" id="shoremap-outcross">SHOREmap outcross</h2>
 
 <p>Click on the <code>Apps</code> button and search for SHOREmap.  You want <code>SHOREmap outcross</code> by REETU TUTEJA.  Click on the 3 dots to the right of the app and then on Quick Launch.</p>
 <p><img src="figs/OutcrossAppQL.png" alt></p>
-<p>Choose the Quick Launch that matches the EMSXX mutation you have been assigned.</p>
+<p><strong>Choose the Quick Launch that matches the EMSXX mutation you have been assigned.</strong> Input parameters have been tuned for each mutation for you; normally, some trial and error would be required to obtain a clear-cut output.</p>
 <h3 class="mume-header" id="input">Input</h3>
 
 <p>Click on <code>Inputs</code></p>
 <ul>
 <li><code>Chromosome Size File</code> provides the length of each chromosome.  This has been filled in for you.</li>
 <li><code>Marker File</code> provides a list of known SNPs segregrating between Col and Ler.  This has been calculated and filled in for you.</li>
-<li><code>Consensus file</code>.  This the data from YOUR cross.  Click on <code>Browse</code>.  Navigate to your <code>analyses</code> folder, then the <code>SHOREmap extract</code> folder from the previous step.  Finally click on <code>extract</code> folder, then select <code>extracted_consensus_0.txt</code> and click OK.</li>
+<li><code>Consensus file</code>.  This the data from <strong>YOUR</strong> cross.  Click on <code>Browse</code>.  Navigate to your <code>analyses</code> folder, then the <code>SHOREmap extract</code> folder from the previous step.  Finally click on <code>extract</code> folder, then select <code>extracted_consensus_0.txt</code> and click OK.</li>
 </ul>
 <p><img src="figs/OutcrossSelectExtract2.png" alt></p>
 <p>When you are done your input window should look something like this:</p>
 <p><img src="figs/OutcrossInputs.png" alt></p>
 <p>Now we are ready to launch.  Click the <code>Launch</code> button!</p>
-<p>This will take about 5 minutes to run.</p>
+<p><strong>This will take about 5 minutes to run.</strong></p>
 <h2 class="mume-header" id="view-outcross-results">View Outcross Results</h2>
 
-<p>Refresh the Analyses window after about 5 minutes. Once your SHOREmap outcross run is listed as complete, click on the 3 dots at the right of it and select <code>Go to output folder</code>.  In the resulting window, click on the <code>outcross</code> folder and then <code>OC_AF_visualziation_1_boost.pdf</code>.  This is a 5 page PDF with one page for each chromosome. It is slow to load because so many points are plotted.</p>
-<p>Scroll through the pages until you find a chromosome with a peak, something like what is shown below (your peak will be in a different location).</p>
+<p>Refresh the Analyses window after about 5 minutes. Once your SHOREmap outcross run is listed as complete, click on the 3 dots at the right of it and select <code>Go to output folder</code>.  In the resulting window, click on the <code>outcross</code> folder and then <code>OC_AF_visualziation_1_boost.pdf</code>.  This is a 5 page PDF with one page for each chromosome.</p>
+<p>It is slow to load because so many points are plotted.</p>
+<p>Scroll through the pages until you find a chromosome with a peak, something like what is shown below (<em>your peak will be in a different location</em>).</p>
 <p><img src="figs/OutcrossResult.png" alt></p>
 <ul>
 <li>The x-axis is position along the chromosome</li>
@@ -327,15 +334,17 @@ pre[data-line] .line-highlight[data-end]:after {
 <li>The gray line is the &quot;boost&quot; score, a statistic to boost signal relative to noise.</li>
 <li>The horizontal teal bar under the peak on the x-axis shows the predicted candidate interval for the gene. The coordinates of this are also give in the last line of text.</li>
 </ul>
-<h3 class="mume-header" id="questions">Questions:</h3>
+<h3 class="mume-header" id="worksheet-questions">Worksheet questions:</h3>
 
-<p>Does your mutation map to a single region?<br>
-What chromosomes(s)<br>
-What coordinates?</p>
+<ol start="2">
+<li>Does your mutation map to a single region?</li>
+<li>What chromosomes(s) does your mutation map to?</li>
+<li>What coordinates?</li>
+</ol>
 <hr>
 <h2 class="mume-header" id="run-shoremap-annotate">Run SHOREmap annotate</h2>
 
-<p>Which of the mutations in the candiate region is likely to actually cause the mutant phenotype?  <strong>SHOREmap annotate</strong> identifies which candidate SNPS are in genes and predicts whether or not they will cause a coding changes.</p>
+<p>Which of the mutations in the candiate region is likely to actually cause the mutant phenotype?  <strong>SHOREmap annotate</strong> identifies sequences in your pooled F2 reads that differ from those of the reference genome, tells you which of these candidate SNPS are in genes, and predicts whether or not they will cause a coding changes.</p>
 <p>Click on the <code>Apps</code> button.  Search for <code>SHOREmap</code>, find <code>SHOREMAP annotate</code> by REETU TUTEJA, click on the three dots to the right of it and select <code>Quick Launch</code>.</p>
 <p><img src="figs/AnnotateApp.png" alt></p>
 <p>Next select the <code>MCB160L</code> Quick Launch.</p>
@@ -358,10 +367,35 @@ What coordinates?</p>
 <hr>
 <h2 class="mume-header" id="determine-the-candidate-gene">Determine the candidate gene</h2>
 
-<p>After about 5 minutes, refresh your analysis screen.  Once SHOREmap annotate is complete, click on the 3 dots to the right of the analysis and open the analysis folder.  Click on the <code>annotate</code> folder and then click the check box on the <code>prioritized_snp...</code> file.  Then click <code>Download &gt; Simple Download</code> to Download it to your computer.</p>
+<p>After about 5 minutes, refresh your analysis screen.  Once SHOREmap annotate is complete, click on the 3 dots to the right of the analysis and open the analysis folder.  Click on the <code>annotate</code> folder and then click the check box on the <code>prioritized_snp...</code> file.  Then click <code>Download &gt; Simple Download</code> on the top menu bar to Download it to your computer.</p>
 <p><img src="figs/AnnotateDownload.png" alt></p>
-<p>Open the file in Excel...</p>
-<p><strong>Stacey to complete from here</strong></p>
+<p>Open the file in Excel. You&apos;ll see that the columns are not labeled.  Go to the<br>
+<a href="http://bioinfo.mpipz.mpg.de/shoremap/guide.html">SHOREmap guide page</a> and scroll to very bottom. You&apos;ll see a table with 16 entries. Label the columns in your Excel file according to the information in this table.</p>
+<p>You can use the Excel sort command to order the entries in your candidate SNP file.</p>
+<p><img src="figs/excel_sort.png" alt></p>
+<h3 class="mume-header" id="worksheet-questions-1">Worksheet questions:</h3>
+
+<ol start="5">
+<li>
+<p>First, sort on allele frequency.  What is the general distribution of AF values in your spreadsheet?  (<em>That is, does it look like an even distribution of values or is it skewed in some way?</em>)</p>
+</li>
+<li>
+<p>What does allele frequency mean in this case?  That is, what exactly is being compared to generate these values, and what does a large value (close to 1) indicate?</p>
+</li>
+<li>
+<p>Next, sort your spreadsheet on the base quality value. Is there a general relationship between allele frequency and base quality? If so, does this help explain the general distribution of AF values? Explain.</p>
+</li>
+<li>
+<p>Go back and again sort your spreadsheet by allele frequency. Now examine the information given about the region of DNA affected by each polymporphism. Which type of region is most likely to be affected by the mutation causing the phenotype?</p>
+</li>
+<li>
+<p>Now examine the last three columns in your spreadsheet.  The information here should help you further narrow down on the polymorphism most likely to be causing the mutant phenotype. Briefly explain why this information is useful.</p>
+</li>
+<li>
+<p>Data on this spreadsheet should allow you to identify somewhere between two and five mutations that are most likely to be causing your phenotype. Find the gene identifier for each of these candidates.  Write out these gene identifiers on your worksheet. (<em>Note gene models with the same prefix followed by different numbers, for examle AT1G01080.1 and AT1G01080.2, represent different mRNA splicing variants of the same pre-mRNA. For this lab, only consider the ATXGXXXXX.1 gene models.</em>)</p>
+</li>
+</ol>
+<p>Enter the requested information into the <a href="https://docs.google.com/spreadsheets/d/1eavWUeG-VVbh4ZLXxyYcHM_g0yMk2xw3X15Yk84B7R4/edit?usp=sharing">course Google sheet</a> by 10 pm this evening. Comparing information with your classmates may help you determine which sequence variant is causing your mutant phenotype.</p>
 
       </div>
       
