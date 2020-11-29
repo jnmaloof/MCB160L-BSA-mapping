@@ -267,13 +267,28 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <h2 class="mume-header" id="intro">Intro</h2>
 
-<h2 class="mume-header" id="call-snps">Call SNPs</h2>
+<p>In today&apos;s lab, you&apos;ll do the following:</p>
+<ol>
+<li>manipulate the file that you generated in the last lab (the BAM file, with the  reads from your mutant aligned to the Col reference genome) so it can be used by the SHOREmap mapping software the next time we meet</li>
+<li>Use the UC Santa Cruz Genome Browser to:<br>
+<strong>a</strong>.  determine how well the reads from your mutant (EMSXX) are aligned to the reference genome using the UC Santa Cruz Genome Browser.<br>
+<strong>b</strong>.  inspect sequence differences between the reference genome (Col) and the genome of a different strain of Arabidopsis (Ler)</li>
+</ol>
+<h2 class="mume-header" id="call-single-nucleotide-polymorphisms-snps">Call Single Nucleotide Polymorphisms (SNPs)</h2>
 
-<p>(Discussion of true SNPs versus errors.  Sources of errors: PCR, sequencer, mapping)</p>
-<p>(Discussion of vcf files)</p>
-<p>We next want to find those positions where the reads from our F2s differ from the reference genome, and where they match.  We will use <code>bcftools mpileup and call</code>.  <code>bcftools mpileup</code> counts up all the reads at each position in the genome and tallies how many match the reference and how many are different.  <code>bcftools call</code> then takes this information and computes statistics to determine the likelihood of <em>true</em> variation (as opposed to sequencing error) at each location.  These programs produce a <code>vcf</code> file, a common format for genomic SNP information.</p>
-<p>We also will convert the vcf file to a format that can be understood by our mapping program, SHOREmap.</p>
-<p>We have combined the bcftools mpileup, call, and SHOREmap convert into a single app that will run these steps together.</p>
+<p>Last time, we aligned the reads obtained from sequencing our F2 mutant plants to the reference Arabidopsis genome (the strain Columbia, or Col) to generate a BAM file. Today, we will find those positions where the reads from our F2s differ from the reference genome, and where they match.  We will use the tools <code>bcftools mpileup and call</code> and  <code>SHOREmap convert</code>.</p>
+<ol>
+<li>
+<p><code>bcftools mpileup</code> counts up all the reads at each position in the genome and tallies how many match the reference and how many are different.</p>
+</li>
+<li>
+<p><code>bcftools call</code> then takes this information and computes statistics to determine the likelihood of <em>true</em> variation (as opposed to sequencing error) at each location.  These programs produce a <code>vcf</code> file, a common format for genomic SNP information.</p>
+</li>
+<li>
+<p><code>SHOREmap convert</code>, as its name suggests, will convert the vcf file to a format that can be understood by our mapping program, SHOREmap.</p>
+</li>
+</ol>
+<p>We have combined the bcftools mpileup, call, and SHOREmap convert into a single app that will run these steps together. (<em>In the command line, you would need to invoke each program one at a time.</em>)</p>
 <p>Click on the <code>Apps</code> button and search for &quot;BAM-to-SHORE&quot;.</p>
 <p><img src="figs/bam2shore-select.png" alt></p>
 <p>Next click on the three buttons to the right of the <code>BAM-to-SHOREmap</code> application and then select <code>Quick Launch</code>.</p>
@@ -285,7 +300,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <h3 class="mume-header" id="bcftools-110-mpileup-input-data">BCFtools 1.10 mpileup - Input data</h3>
 
 <p>Click on <code>BCFtools 1.10 mpileup - Input data</code></p>
-<p>Here you want to use the bam file that you created by running bowtie above.</p>
+<p>Here you want to use the BAM file that you created by running Bowtiew in the previous session.</p>
 <p>Click the &quot;add&quot; button, navigate to your <code>analyses</code> folder, click on the <code>Bowtie2-Map-SortBam...</code> folder and then select the <code>output_sorted.bam</code> file and click OK</p>
 <p><img src="figs/bam2shore-input-bam.png" alt></p>
 <p>Once you have it selected the window should look like this:</p>
@@ -295,10 +310,101 @@ pre[data-line] .line-highlight[data-end]:after {
 <p>The remaining settings can be left at their default values.</p>
 <p>Time to launch! Click <code>Launch Analysis</code></p>
 <p>As before, click on the <code>Analyses</code> button and click <code>refresh</code> a few times to make sure it is running didn&apos;t fail in the first few minutes.</p>
-<p>This will take 1-2 hours to run (closer to 2 for most data sets)</p>
+<p><strong>This will take 1-2 hours to run (closer to 2 hours for most data sets); we&apos;ll work with the output in our next lab</strong></p>
+<h3 class="mume-header" id="inspect-the-settings">Inspect the settings</h3>
+
+<p>Now that your analysis is running, let&apos;s look more closely at what we just did.</p>
+<p>Again, click on the three buttons to the right of the <code>BAM-to-SHOREmap</code> application and then select <code>Quick Launch</code>.</p>
+<p><img src="figs/bam2shore-quicklaunch1.png" alt></p>
+<p>Then, select <code>MCB160L</code> from the quick launch menu and click on the arrowhead.<br>
+<img src="figs/bam2shore-quicklaunch2.png" alt></p>
+<p>Please look at the settings in the indicated tabs to answer the below questions.</p>
+<p><strong>Please answer the below questions in today&apos;s worksheet.</strong></p>
+<ol>
+<li>Click on the <code>bcftools mpileup - Output options</code> tab.  What is the selected output type? And from what you learned in today&#x2019;s lecture, what do you think are the two most important types of information contained in this file?</li>
+<li>Click on the <code>bcftools call - Consensus/variant calling options</code> tab. What is the default &#x2018;variant calling method&#x2019;?   And what is the other possible method</li>
+<li>What do you think these two options might mean? And why do you think it is important that we used the default method here?  (<em>Keep in mind that the Illumina library that you are analyzing was generated from pooled genomic DNA extracted from ~200 different plants.</em>)</li>
+<li>Click on the <code>SHOREmap convert - Parameters</code> tab. Find the &#x2018;minimum AF&#x2019; that has been specified for you and write it down below. (<em>AF stands for &#x2018;Allele Frequency&#x2019;.</em>) How do you think this relates to the &#x2018;variant calling method&#x2019; specified in <code>bcftools call</code> and what do you think this parameter does?</li>
+</ol>
 <hr>
-<h2>IGV</h2>
-<p><strong>STILL NEED TO COMPLETE THIS</strong></p>
+<h2>Inspect your aligned reads using the UC Santa Cruz Genome Browser</h2>
+<p>Next, you will examine how well the sequencing reads from your mutant F2 plants were aligned to the Arabidopsis reference genome. (<em>Recall that the strain called Col was sequenced to generate this reference sequence</em>.)</p>
+<p>We have discussed the many ways in which errors can be generated in Illumina sequencing reads. Since we&apos;re using Illumina data to map a mutant, it is important for us to be able to distinguish &apos;real&apos; polymporphisms present in our starting pooled genomic DNA sample from errors generated during the sequencing process.</p>
+<p>The algorithms that we&apos;re working with examine both read quality (e.g. PHRED scores, as discussed last time) and the number of times a specific polymporphism is detected in our library to help distinguish real polymorphisms from random errors.</p>
+<p>We&apos;ll get a sense for how this works by loading the BAM file you generated in our last lab in the <a href="https://genome.ucsc.edu/">UC Santa Cruz Genome Browser</a> and looking at the aligned reads.</p>
+<ol>
+<li>First, go to the Discovery Environment and <strong>obtain a URL that links to your BAM file</strong>.  Navigate to your <code>analyses</code> folder, click on the <code>Bowtie2-Map-SortBam...</code> folder and then select the <code>output_sorted.bam</code> file.</li>
+</ol>
+<p><img src="figs/bam_link.png" alt></p>
+<p>Select the &apos;Share&apos; pulldown menu and select the &apos;View in Genome Browser&apos; option.<br>
+<img src="figs/bam_to_genome_browser.png" alt></p>
+<p>You&apos;ll then get a pop-up window with a URL. <strong>Paste this address into your worksheet (this is question 5</strong>) and save it; you&apos;ll need it below (and you&apos;ll also need it again next week).<br>
+<img src="figs/bam_url.png" alt></p>
+<ol start="2">
+<li>Next, navigate to the <a href="https://genome.ucsc.edu/">UC Santa Cruz Genome Browser</a> to <strong>set up the display settings and load your custom data.</strong>  Cick on <code>Genome Browser</code> under tools.</li>
+</ol>
+<p><img src="figs/UCSC_intro.png" alt></p>
+<p>Type &apos;araTha1&apos; into the search window; select the &apos;araTha1&apos; listed under the <strong>Assembly Hub: Plants</strong> line.  <em>Be sure you select this one even though other lines have the same name!</em></p>
+<p><img src="figs/assembly_hub-plants.png" alt></p>
+<p>The &quot;Feb 2011 Thale cress&quot; annotation should autopopulate in the &apos;Plants Hub Assembly&apos; bar.  Be sure that this is the name diplayed before you click &apos;Go&apos;!<br>
+<img src="figs/correct_annotation.png" alt></p>
+<p>Warning - the browser window will look very confusing at first!  We will simplify the view.</p>
+<p>Click the &apos;hide all&apos; button just below the white window.</p>
+<p><img src="figs/ucsc_busy.png" alt></p>
+<p>Ah, that&apos;s better! Now we&apos;ll add a custom track that includes the sequences from your mutant aligned to the reference genome.</p>
+<p>Click on the &apos;add custom tracks&apos; button<br>
+<img src="figs/custom_track.png" alt><br>
+And paste in the URL you obtained from the DE in the top box in the next window.  Click &apos;submit&apos;.<br>
+<img src="figs/paste_URL.png" alt></p>
+<p>You should be taken to a page that looks like the below image.  Click on &apos;go&apos;.<br>
+<img src="figs/manage_custom_track.png" alt></p>
+<ol start="3">
+<li><strong>Examine your aligned reads.</strong>  To see them, click on the &apos;plus&apos; symbol on the left side of the blue bar labeled &apos;Custom&apos;.  Choose the &apos;pack&apos; display option under the display options pull-down menu.</li>
+</ol>
+<p>Write in the locus name <em>XCT</em> in the search bar near the top of display, just to restrict your view to a small part of the genome.</p>
+<p>Then click the &apos;refresh&apos; button on the rights side of the blue &apos;Custom&apos; bar.</p>
+<p><img src="figs/view_reads.png" alt></p>
+<p>Navigate within the Genome Browser to answer the below questions on your worksheet. Remember to use the navigation controls at the top of the page zoom in and out, and to move your field of view to the left and the right.</p>
+<p><strong>More worksheet questions</strong></p>
+<ol start="6">
+<li>What do you think the vertical red line at the top of the page represents? (<em>Hint: try entering new position coordinates in the search bar at the top of the page.</em>)</li>
+<li>What do the brown rectangles separated by horizontal lines at the bottom of the plot represent?  Why are there small arrowheads on these horizontal lines?</li>
+<li>Note the skinny brown rectangles at the farthest left and right portions of each gene model. What do these represent? (<em>Their positions should give you a big hint.</em>)</li>
+<li>The brown and blue boxes in the middle of the plot represent individual sequencing reads from your library.  Click on a few to see the corresponding portion of the BAM file for each read.  Why are some reads indicated in blue and some in brown?</li>
+</ol>
+<p>Go back to your browswer view. Zoom in to the base level (see &apos;base&apos; button just to the left of &apos;zoom out&apos; in the navigation area). Find a sequence read (either a brown or a blue rectangle) that has white nucleotide displayed within it. Click on this read. (<em>You may have to scan to left or right to find one.</em>)</p>
+<ol start="10">
+<li>Look at the BAM entry for this sequence read. Identify the polymorphic base and write in its sequence and that of the 3 bases on either side on your worksheet (do this for both your sequence read and the reference). Circle or highlight the mismatched bases.</li>
+<li>Find the quality score for this base in your sequencing read and write it in below. Using the formula from last lab, calculate the probability that this base call is not correct. Based on this value, do you believe this is a true polymorphism?</li>
+<li>Does anything else in your genome browser view suggest whether or not this represents a true polymorphism between your pooled F2 genomic DNA and the reference genome? Explain.</li>
+</ol>
+<hr>
+<h2>Examine polymorphisms between Ler and Columbia</h2>
+<p>Recall that you&apos;ll be mapping your mutation using markers (SNPs) that are different between the Col and Ler strains of Arabidopsis.  We can use the Genome Browser to see just how common such polymorphisms are.</p>
+<p>You will generate a new custom track in the UC Santa Cruz Genome Browser to view  Ler reads generated in a separate experiment.  On your Genome Browser page, click the &apos;manage custom tracks&apos; button.</p>
+<p><img src="figs/manage_tracks.png" alt></p>
+<p>Now, click on the &apos;add custom tracks&apos; buttons in the next window.<br>
+<img src="figs/add_Ler_tracks.png" alt></p>
+<p>And then paste this URL</p>
+<p><a href="https://data.cyverse.org/dav-anon/iplant/home/sharmer/mcb160L/parents/Ler/Ler_sorted.bam">https://data.cyverse.org/dav-anon/iplant/home/sharmer/mcb160L/parents/Ler/Ler_sorted.bam</a></p>
+<p>into the to entry box.  It should look like the below image.  Hit &apos;submit&apos;.</p>
+<p><img src="figs/add_Ler_tracks_submit.png" alt></p>
+<p>Now on the next page click &apos;go&apos; to return to the Genome Browser.</p>
+<p><img src="figs/back_to_GB.png" alt></p>
+<p>Change the settings under the blue bar labeled &apos;Custom&apos; (as you did previously). Hide your F2 BAM file and set the Ler BAM file to display as &apos;pack&apos;.  Click &apos;refresh&apos;.</p>
+<p>Type in the gene name ELF4 in the top search bar and click &apos;go&apos;.</p>
+<p><img src="figs/elf4_gb.png" alt></p>
+<p>Choose the top link (AT2G40080.1) on the next page.</p>
+<p>Using the zoom and scan controls, find a position within the ELF4 coding region where you think there may be a true sequence polymorphism (SNP) between Ler and Col.</p>
+<ol start="13">
+<li>Click on a read to see the alignment between Col and Ler around your putative SNP.  Write out the sequence of the candidate SNP and that of the 3 bases on either side (do this for both your sequence read and the reference). Circle or highlight the mismatched bases. Explain why you think this may be a true polymorphism (SNP) rather than a sequencing error.</li>
+</ol>
+<p>Zoom out with the 10x button. Scan left and right and examine the frequency of continuous vertical red lines; these are positions where the sequences of most/all reads fail to match the reference genome.</p>
+<ol start="14">
+<li>What do you conclude about the frequency of SNPs between Col and Ler?</li>
+</ol>
+<hr>
+<p><strong><em>In our next lab, you will identify genomic regions and candidate genes that may be responsible for the miRNA phenotype in your mutant plants.</em></strong></p>
 
       </div>
       
