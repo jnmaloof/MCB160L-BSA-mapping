@@ -144,7 +144,6 @@ You can use the Excel sort command to order the entries in your candidate SNP fi
 
 ![](figs/excel_sort.png)
 
-While in the Discovery Environment, dowload
 
 ### Worksheet questions:
 
