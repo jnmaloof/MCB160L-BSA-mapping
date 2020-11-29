@@ -132,16 +132,19 @@ Ready to Launch!  This will take about 5 minutes to run.
 ___
 ## Identify candidate genes
 
-After about 5 minutes, refresh your analysis screen.  Once SHOREmap annotate is complete, click on the 3 dots to the right of the analysis and open the analysis folder.  Click on the `annotate` folder and then click the check box on the `prioritized_snp...` file.  Then click `Download > Simple Download` on the top menu bar to Download it to your computer.
+After about 5 minutes, refresh your analysis screen.  Once SHOREmap annotate is complete, click on the 3 dots to the right of the analysis and open the analysis folder.  Click on the `annotate` folder.
 
-![](figs/AnnotateDownload.png)
+You will now download two files for use today and in our next lab. Click the check box on the `prioritized_snp...` file and the `ref_and_eco_coding_seq...` file.  Then click `Download > Simple Download` on the top menu bar to Download these to your computer.  *Keep track of where they are!*
 
-Open the file in Excel. You'll see that the columns are not labeled.  Go to the
-[SHOREmap guide page](http://bioinfo.mpipz.mpg.de/shoremap/guide.html) and scroll to very bottom. You'll see a table with 16 entries. Label the columns in your Excel file according to the information in this table.
+![](figs/simple_download_two_files.png)
+
+Open the `prioritized_snp...` file in Excel. You'll see that the columns are not labeled.  Go to the [SHOREmap guide page](http://bioinfo.mpipz.mpg.de/shoremap/guide.html) and scroll to very bottom. You'll see a table with 16 entries. Label the columns in your Excel file according to the information in this table.
 
 You can use the Excel sort command to order the entries in your candidate SNP file.
 
 ![](figs/excel_sort.png)
+
+While in the Discovery Environment, dowload
 
 ### Worksheet questions:
 
