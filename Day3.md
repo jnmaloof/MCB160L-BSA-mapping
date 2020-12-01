@@ -144,7 +144,6 @@ You can use the Excel sort command to order the entries in your candidate SNP fi
 
 ![](figs/excel_sort.png)
 
-
 ### Worksheet questions:
 
 5) First, sort on allele frequency.  What is the general distribution of AF values in your spreadsheet?  (_That is, does it look like an even distribution of values or is it skewed in some way?_)
@@ -159,6 +158,23 @@ You can use the Excel sort command to order the entries in your candidate SNP fi
 
 10) Data on this spreadsheet should allow you to identify somewhere between two and five mutations that are most likely to be causing your phenotype. Find the gene identifier for each of these candidates.  Write out these gene identifiers on your worksheet. (_Note gene models with the same prefix followed by different numbers, for examle AT1G01080.1 and AT1G01080.2, represent different mRNA splicing variants of the same pre-mRNA. For this lab, only consider the ATXGXXXXX.1 gene models._)
 
-Enter the requested information into the [course Google sheet](https://docs.google.com/spreadsheets/d/1eavWUeG-VVbh4ZLXxyYcHM_g0yMk2xw3X15Yk84B7R4/edit?usp=sharing) by 10 pm this evening. Comparing information with your classmates may help you determine which sequence variant is causing your mutant phenotype.
+Enter the requested information into the [course Google form](https://forms.gle/x456EWJbEpFjFC3R9) by 10 pm this evening. Comparing information with your classmates may help you determine which sequence variant is causing your mutant phenotype.
 
-___In our next lab, you will learn more about these candidate genes and the predicted effects of the mutations you have uncovered.___
+___
+## View SNPs around your top candidate(s) in the Genome Browswer
+
+Reopen the [UC Santa Cruz Genome Browser](https://genome.ucsc.edu/) using the same web browser you used on in the last lab. The custom tracks with reads from wild-type Ler (`output_sorted.bam`) and from your pooled F2 mutant DNA (`Ler_sorted.bam`) should still be visible. (*If not, please go back to the instructions for our last lab and reload these tracks in your browser window.*)
+
+Enter the gene identification number of one of your top candidate genes (e.g. ATXGXXXXX.1) This should allow you to view the reads mapping to your locus.
+
+First, inspect the reads loaded in the Ler track. Zoom in and scan left and right as necessary to find a site polymorphic between Ler and Col.  Now, inspect the same site in the reads from your pooled F2 plants.
+
+11) How frequently do you see the Ler allele of this SNP in your `output_sorted.bam` read?
+
+Next, type the gene name *XCT* into the search bar at the top of the browser. This will take you to a locus on chromosome 2 that contains multiple SNPs between Col and Ler.  Zoom in and scroll back and forth to locate a few of these SNPs.
+
+12) How frequently do you see the Ler allele of these SNPs in your `output_sorted.bam` read?
+
+13) Is the *XCT* locus linked to the mutation causing your phenotype?  Briefly explain.
+
+___In our next lab, you will learn more about your candidate genes and the predicted effects of the mutations you have discovered.___

@@ -374,7 +374,6 @@ pre[data-line] .line-highlight[data-end]:after {
 <p>Open the <code>prioritized_snp...</code> file in Excel. You&apos;ll see that the columns are not labeled.  Go to the <a href="http://bioinfo.mpipz.mpg.de/shoremap/guide.html">SHOREmap guide page</a> and scroll to very bottom. You&apos;ll see a table with 16 entries. Label the columns in your Excel file according to the information in this table.</p>
 <p>You can use the Excel sort command to order the entries in your candidate SNP file.</p>
 <p><img src="figs/excel_sort.png" alt></p>
-<p>While in the Discovery Environment, dowload</p>
 <h3 class="mume-header" id="worksheet-questions-1">Worksheet questions:</h3>
 
 <ol start="5">
@@ -397,8 +396,26 @@ pre[data-line] .line-highlight[data-end]:after {
 <p>Data on this spreadsheet should allow you to identify somewhere between two and five mutations that are most likely to be causing your phenotype. Find the gene identifier for each of these candidates.  Write out these gene identifiers on your worksheet. (<em>Note gene models with the same prefix followed by different numbers, for examle AT1G01080.1 and AT1G01080.2, represent different mRNA splicing variants of the same pre-mRNA. For this lab, only consider the ATXGXXXXX.1 gene models.</em>)</p>
 </li>
 </ol>
-<p>Enter the requested information into the <a href="https://docs.google.com/spreadsheets/d/1eavWUeG-VVbh4ZLXxyYcHM_g0yMk2xw3X15Yk84B7R4/edit?usp=sharing">course Google sheet</a> by 10 pm this evening. Comparing information with your classmates may help you determine which sequence variant is causing your mutant phenotype.</p>
-<p><em><strong>In our next lab, you will learn more about these candidate genes and the predicted effects of the mutations you have uncovered.</strong></em></p>
+<p>Enter the requested information into the <a href="https://forms.gle/x456EWJbEpFjFC3R9">course Google form</a> by 10 pm this evening. Comparing information with your classmates may help you determine which sequence variant is causing your mutant phenotype.</p>
+<hr>
+<h2 class="mume-header" id="view-snps-around-your-top-candidates-in-the-genome-browswer">View SNPs around your top candidate(s) in the Genome Browswer</h2>
+
+<p>Reopen the <a href="https://genome.ucsc.edu/">UC Santa Cruz Genome Browser</a> using the same web browser you used on in the last lab. The custom tracks with reads from wild-type Ler (<code>output_sorted.bam</code>) and from your pooled F2 mutant DNA (<code>Ler_sorted.bam</code>) should still be visible. (<em>If not, please go back to the instructions for our last lab and reload these tracks in your browser window.</em>)</p>
+<p>Enter the gene identification number of one of your top candidate genes (e.g. ATXGXXXXX.1) This should allow you to view the reads mapping to your locus.</p>
+<p>First, inspect the reads loaded in the Ler track. Zoom in and scan left and right as necessary to find a site polymorphic between Ler and Col.  Now, inspect the same site in the reads from your pooled F2 plants.</p>
+<ol start="11">
+<li>How frequently do you see the Ler allele of this SNP in your <code>output_sorted.bam</code> read?</li>
+</ol>
+<p>Next, type the gene name <em>XCT</em> into the search bar at the top of the browser. This will take you to a locus on chromosome 2 that contains multiple SNPs between Col and Ler.  Zoom in and scroll back and forth to locate a few of these SNPs.</p>
+<ol start="12">
+<li>
+<p>How frequently do you see the Ler allele of these SNPs in your <code>output_sorted.bam</code> read?</p>
+</li>
+<li>
+<p>Is the <em>XCT</em> locus linked to the mutation causing your phenotype?  Briefly explain.</p>
+</li>
+</ol>
+<p><em><strong>In our next lab, you will learn more about your candidate genes and the predicted effects of the mutations you have discovered.</strong></em></p>
 
       </div>
       
