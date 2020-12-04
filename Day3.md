@@ -122,7 +122,7 @@ The input window should look something like this when you are done (but chrom, s
 
 ### Functional Annotation:
 
-SHOREmap annotate needs to know where the genes are on the chromosomes.  We have pre-filled in these fields for you but if you want to make sure they are correct, click on `Functional Annotation` and confirm that it looks like the window below.  The Genome file provides the genomic sequence and the gff file provides gene location in the genome.
+`SHOREmap annotate` needs to know where the genes are on the chromosomes.  We have pre-filled in these fields for you but if you want to make sure they are correct, click on `Functional Annotation` and confirm that it looks like the window below.  The Genome file provides the genomic sequence and the gff file provides gene location in the genome.
 
 ![](figs/AnnotateFunctionalAnnotation.png)
 
@@ -163,7 +163,7 @@ Enter the requested information into the [course Google form](https://forms.gle/
 ___
 ## View SNPs around your top candidate(s) in the Genome Browswer
 
-Reopen the [UC Santa Cruz Genome Browser](https://genome.ucsc.edu/) using the same web browser you used on in the last lab. The custom tracks with reads from wild-type Ler (`output_sorted.bam`) and from your pooled F2 mutant DNA (`Ler_sorted.bam`) should still be visible. (*If not, please go back to the instructions for our last lab and reload these tracks in your browser window.*)
+Reopen the [UC Santa Cruz Genome Browser](https://genome.ucsc.edu/) using the same web browser you used in the last lab. The custom tracks with reads from wild-type Ler (`output_sorted.bam`) and from your pooled F2 mutant DNA (`Ler_sorted.bam`) should still be visible. (*If not, please go back to the instructions for our last lab and reload these tracks in your browser window.*)
 
 Enter the gene identification number of one of your top candidate genes (e.g. ATXGXXXXX.1) This should allow you to view the reads mapping to your locus.
 
@@ -177,4 +177,5 @@ Next, type the gene name *XCT* into the search bar at the top of the browser. Th
 
 13) Is the *XCT* locus linked to the mutation causing your phenotype?  Briefly explain.
 
-___In our next lab, you will learn more about your candidate genes and the predicted effects of the mutations you have discovered.___
+___
+##In our next lab, you will learn more about your candidate genes and the predicted effects of the mutations you have discovered.

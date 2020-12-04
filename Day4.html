@@ -1,0 +1,379 @@
+<!DOCTYPE html><html><head>
+      <title>Day4</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/slharmer/.atom/packages/markdown-preview-enhanced/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="mapping-mutants-by-bulk-segregant-analysis-and-illumina-sequencing">Mapping mutants by Bulk Segregant Analysis and Illumina Sequencing</h1>
+
+<h1 class="mume-header" id="day-4-identify-top-candidate-gene">Day 4: Identify top candidate gene</h1>
+
+<h2 class="mume-header" id="intro">Intro</h2>
+
+<p>At this point in the module, you have identified novel sequence variants that are genetically linked to the mutant phenotype in your F2 plants. These sequence variants are not present in the parental Col strain and are different from the Col/Ler SNPs you used to define the mutant interval.</p>
+<p>Last time, you ran <code>SHOREmap annotate</code> to generate a file with a list of variant SNPs and the predicted effects of these SNPs on protein sequences. For all the mutant families we are characterizing, more than one gene in the interval has an alteration predicted to change the sequence of the encoded protein. Recall that the bright luciferase phenotype of these mutants is due to some defect in the generation or function of an amiRNA, so we expect the gene mutated in your plants normally acts in the miRNA pathway.</p>
+<p>Your goal today is to use several different on-line resources to identify the single mutant gene most likely to be causing the miRNA phenotype in your F2 family.</p>
+<p><strong>Before you proceed, be sure that your TA has signed off on your short list of candidate genes.</strong></p>
+<p>Answer the below questions in your lab worksheet as you go along.</p>
+<hr>
+<h2 class="mume-header" id="examine-the-types-of-mutations-in-your-interval-and-identify-a-top-candidate-gene">Examine the types of mutations in your interval and identify a top candidate gene</h2>
+
+<p>Open the <code>prioritized_snp...</code> file that you generated in the last lab session in Excel. Again, sort on allele frequency.</p>
+<ol>
+<li>Recall that <code>SHOREmap outcross</code> selected this interval because of the very low frequency of Ler alleles here. With this in mind, what are the two possible reasons for the alternate bases reported in the fourth column?</li>
+</ol>
+<p>You can help distinguish between these two possibilities by focusing on sequence variants with a high allele frequency in your pooled F2 plants.</p>
+<ol start="2">
+<li>Identify all of the sequence variants with an allele frequency greater than 0.9.  Write out all the types of alterations that you see (i.e. ref base X --&gt; alt base Y, <em>etc.</em>) and note how often they occur. Based on what you learned in lecture, is this what you would expect given that EMS was the mutagen?  Briefly explain.</li>
+</ol>
+<p>Last time, you identified somewhere between two and five candidate genes in your mutant interval. Now, you will do a quick database search to learn what is currently known about the functions of these genes.</p>
+<p>Go to <a href="https://www.arabidopsis.org">The Arabidopsis Information Resource (TAIR)</a> to learn more about your candidates.</p>
+<p>(<em>You should have more than enough free page views at TAIR to do today&apos;s assignment. However, if you receive a message saying you need to subscribe to view more pages, <a href="https://www.library.ucdavis.edu/service/connect-from-off-campus/vpn-questions-known-issues/">VPN into the university library</a> to gain access.</em>)</p>
+<p>One-by-one, enter the identifiers of the candidate genes (e.g. AT2G21150) into the search bar at the top of the and click &apos;Search&apos;.</p>
+<p><img src="figs/TAIR_gene_search.png" alt></p>
+<p>You may see multiple hits on the next page. If so, click on the hyperlink that exactly matches the gene identifier you searched on.</p>
+<p><img src="figs/locus_search.png" alt></p>
+<p>You will be taken to a page with a lot of information about your candidate gene.  Start out by reading the overview of known functions at the top of the page.</p>
+<p><img src="figs/quick_annotation.png" alt></p>
+<p>Then, scroll to the bottom of the page to see links to publications about this gene. If any of these look particularly relevant to the phenotype we are studying, click on the link to see the abstract of the paper.</p>
+<p><img src="figs/paper_link.png" alt></p>
+<p>On this page, you will see a link that will take you to the full journal article if you want to read more.</p>
+<p><img src="figs/journal_link.png" alt></p>
+<p>After going though this process for all of your candidate genes, you should be able to identify <strong>one</strong> as your top candidate.</p>
+<p><em>Note that this is often not the case; frequently a literature search wouldn&apos;t allow you to identify a top candidate so easily.</em></p>
+<ol start="3">
+<li>Based on information you found on TAIR, what gene do you think is most likely to be causing your phenotype?</li>
+</ol>
+<h4 class="mume-header" id="check-in-with-your-ta-on-the-identity-of-your-top-candidate-before-you-continue"><em>Check in with your TA on the identity of your top candidate before you continue.</em></h4>
+
+<hr>
+<h2 class="mume-header" id="predict-whether-the-mutation-in-your-top-candidate-is-likely-to-affect-protein-function">Predict whether the mutation in your top candidate is likely to affect protein function</h2>
+
+<p>Although new experiments would be required to <strong>prove</strong> that the mutation you&apos;ve identified has affected the function of your candidate protein, we can take advantage of on-line resources to make some predictions.</p>
+<p>First, we&apos;ll identify which amino acid is altered in your mutant protein.  To do this, we&apos;ll now open a second output file generated by <code>SHOREmap annotate</code>.  You should have downloaded a file called  <code>ref_and_eco_coding_seq...</code> in our last session (<em>if you didn&apos;t, follow the instructions from our last lab and download it now</em>).</p>
+<p>Open this file using Word.  Search for the gene identifier of you top candidate. You will find an entry that looks similar to what is shown below (although probably longer)</p>
+<p><img src="figs/protein_seq.png" alt></p>
+<p>The first section shows the nucleotide sequence of the reference version of the gene and the second section shows the seuqence of the mutant allele (bases identical to the reference are indicated by dashes; the mutant base is circled and labeled <strong>#1</strong>).</p>
+<p>The third section shows the amino acid sequence of the reference version of the protein and the fourth section shows the sequence of the mutant allele (amino acids identical to the reference are indicated by dashes; the mutant amino acid is circled and labeled <strong>#2</strong>). Note that the stop codon is indicated with a * symbol.</p>
+<p>For the next section of the lab, you will need to know the amino acid sequence of the wild-type protein and the position and nature of the mutation in your top candidate.</p>
+<ol start="4">
+<li>Copy and paste the wild-type sequence of your top candidate protein in your worksheet.</li>
+</ol>
+<p>You can use the Tools -&gt; Word Count function in Word to count the number of amino acids in your protein and to find the numeric position of the amino acid mutated in your protein.</p>
+<p><img src="figs/word_count.png" alt></p>
+<p>Answer the below question on your worksheet.</p>
+<ol start="5">
+<li>What is the position and nature of the mutation in your protein?  For example, if the reference sequence had a threonine (T) at position 541 but your mutant protein is predicted to have a valine (V) residue at that position, you would write:  T541V.</li>
+</ol>
+<p>Now you will use this information to determine whether your predicted mutation lies in a region of the protein that has a known function (a protein domain).</p>
+<h4 class="mume-header" id="provean-query">PROVEAN query</h4>
+
+<p>First, you will start a query running on a site called <a href="http://provean.jcvi.org/seq_submit.php">PROVEAN</a>.  This search can be slow to run, so you will start it now and come back later to analyze the output. The purpose of this analysis will be described below.</p>
+<p>Go to the <a href="http://provean.jcvi.org/seq_submit.php">Provean</a> site. Paste in your wild-type protein sequence and the variant predicted in your mutant in the indicated boxes.</p>
+<p><img src="figs/provean_entry.png" alt></p>
+<p><strong>Provide your email address</strong> before you click &apos;Submit&apos; as it can be slow to run (up to 15 minutes) and you will likely navigate away from this screen while it is running.</p>
+<h4 class="mume-header" id="pfam-query-and-analysis">Pfam query and analysis</h4>
+
+<p>Go the <a href="https://pfam.xfam.org">Pfam website</a>. Here, you will search the wild-type protein sequence against a database containing about 18,000 different protein domain models. From this, you&apos;ll be able to learn whether your mutation lies within a region known to have specific function.</p>
+<p>Once you&apos;re on the Pfam page, click on the &apos;SEQUENCE SEARCH&apos; link and paste in your wild-type protein sequence in the text box.  Be sure you only include the one-letter amino acid codes and nothing else.  Click &apos;Go&apos;.</p>
+<p><img src="figs/pfam_search.png" alt></p>
+<p>Depending on the number of requests queued at the server, it may take up to a few minutes for your search to compete.</p>
+<p>You&apos;ll be taken to a page with a cartoon view in which any detected domains are highlighted. Below this schematic view will be detailed information about how well your sequence matches the domain model(s).  The numbers under &apos;Alignment&apos; indicate the starting and ending amino acids of your protein that match the indicated protein domain(s).</p>
+<p>The other circled number is the E-value. This is similar to the E-values you get back from BLAST searches. This value represents the number of hits that would be expected to have a score equal to or better than this value by chance alone.</p>
+<p><img src="figs/xct_pfam.png" alt></p>
+<p>Determine whether your mutation of interest falls within a recognized protein domain.  If so, click on the corresponding hyperlink for the domain &apos;Family&apos; name (far left) to open up the link in a new window.</p>
+<p>Use the above information to answer the questions on your worksheet.</p>
+<ol start="6">
+<li>
+<p>Does your protein have any recognized (significant) Pfam-A domains?  If so, write them all out below.</p>
+</li>
+<li>
+<p>Does your top candidate mutation fall within any of these predicted domains? If so, which one?</p>
+</li>
+</ol>
+<p>If so, click on this domain name and see what you can learn about its function.</p>
+<ol start="8">
+<li>Does this help you decide whether or not your mutation might affect protein function?  Explain.</li>
+</ol>
+<h4 class="mume-header" id="provean-analysis">PROVEAN analysis</h4>
+
+<p>While knowing what region of the protein is affected by your candidate mutation is very useful, it is also important to consider the <strong>specific nature</strong> of the alteration in the mutant. For example, is the mutated residue one in which an amino acid with a small nonpolar side chain is exchanged for another (e.g. alanine replaced with glycine)?  Or do the wild-type and mutant side chains have very different chemical properties (e.g. arginine replaced with proline)?</p>
+<p>Another important piece of information is how conserved that particular amino acid is across all known homologs of the protein of interest. For example, substitution of a residue that is highly conserved in all known  homologs of this protein is more likely to have a negative effect on function than substitution of a residue that is not conserved (compare amino acids 2 and 1 in the below alignment to see poorly conserved and highly conserved residues).</p>
+<p><img src="figs/sample_align.png" alt></p>
+<p><a href="http://provean.jcvi.org/seq_submit.php">PROVEAN</a> will analyze the sequence of your mutant portein, taking into account both the nature of the amino acid substitution and how well this site is conserved across homologous proteins.  It will then predict how likely it is that your specific mutation will affect protein function.</p>
+<p>The search that you submitted earlier today should have finished by now.  Either check your email for a notification from PROVEAN or directly navigate back to your search page.  Use this information to complete the last section of the worksheet.</p>
+<ol start="9">
+<li>What is the prediction score you received from PROVEAN?  What effect does PROVEAN predict this mutation will have on the function of the protein?</li>
+</ol>
+<p><strong>In our next lab (day 19), we will compare the top candidate mutants identified in each of the EMSXX families and discuss strategies to prove that the identified mutations are truly causing the miRNA-related phenotype.</strong></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
