@@ -83,6 +83,13 @@ You can use the Tools -> Word Count function in Word to count the number of amin
 
 ![](figs/word_count.png)
 
+Alternatively, you can go back to your candidate SNP excel file and identify the affected amino acid there.  The 12th column (called "the numerical order of the codon having the mutation" in the [SHOREmap guide](http://bioinfo.mpipz.mpg.de/shoremap/guide.html)) identifies the variant nucleotide causing the amino acid alteration on each row. In the example below, nucleotide #572 is predicted to cause the V to A mutation.  Since there are 3 nucleotides per codon, we can determine the position of the affected amino acid in the protein by dividing by 3:
+
+572/3 = 190.67, or codon 191 is affected (and thus amino acid #191).
+
+![](figs/codon.num.excel.png)
+
+
 Answer the below question on your worksheet.
 
 5) What is the position and nature of the mutation in your protein?  For example, if the reference sequence had a threonine (T) at position 541 but your mutant protein is predicted to have a valine (V) residue at that position, you would write:  T541V.
