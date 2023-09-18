@@ -3,7 +3,7 @@
 
 ## Using the CyVerse Discovery Environment (DE)
 
-As you saw in the introductory video by Jason Williams, the Discovery Environment allows biologists without advanced coding skills to take advantage of bioinformatics algorithms and advanced computing resources via a point-and-click environment.
+As you learned in lecture, the Cyverse Discovery Environment allows biologists without advanced coding skills to take advantage of bioinformatics algorithms and advanced computing resources via a point-and-click environment.
 
 Although there are many advantages to using these algorithms via the command line, we will take advantage of the Discovery Environment so that you can get experience analzying Next Generation Sequencing data without needing to learn anything about coding.
 
@@ -13,46 +13,48 @@ The process of porting the specialized mapping software we'll be using (SHOREmap
 
 Go to the [Cyverse](https://www.cyverse.org) home page and launch the Discovery Environment.
 
-![](figs/launch_DE.png)
 
-Login to your account.
+![](new.figs/launch_DE.png)
+
+![](new.figs/launch_DE_2.png)
+
+And log in to your account
+
+![](new.figs/DE_login.png)
 
 #### Worksheet activity
 
-1. Explain what the "Analyses", "Apps", and "Data" buttons do on the DE desktop
+1. Explain what the "Analyses", "Apps", and "Data" buttons in the sidebar do on the DE desktop
 
 ---
 
 ## Map reads to Columbia reference genome
 
-Click on Apps
+Click on Apps in the sidebar
 
-![](figs/CyverseDesktopApps.png)
+![](new.figs/DE.launch.apps.png)
 
-Type `bowtie2` in the search bar and then scroll through the results until you find Bowtie2-Map-SortBam Workflow by Reetu Tuteja.
+Type `bowtie2` in the search bar and then scroll through the results until you find Bowtie2-Map-SortBam Workflow by Reetu Tuteja.  Select that tool.
 
-Click on the 3 dots to the right of the app name.
+![](new.figs/bowtie2_search.png)  
 
-![](figs/Bowtie2AppSearch.png)
+Click on the details button in the upper right corner.
 
-Click on Quick Launch
+![](new.figs/bowtie2.details.png) 
 
-![](figs/Bowtie2AppQL.png)
+And then click on MCB160L and then the arrow to Quick Launch the application
 
-Click on MCB160L and then the arrowhead
+![](new.figs/bowtie2.quicklaunch.png)
 
-![](figs/Bowtie2AppQL2.png)
-
+Click on the main 'Bowtie2-Map-SortBam Workflow' page to prepare for your analysis.
 
 ### Analysis Name, etc.
 
-You can leave the Analysis Name, Comments, and Output Folder with the default settings.
+You can leave the Analysis Name, Comments, and Output Folder with the default settings.  Click on 'Next' to go to the next page.
 
-![](figs/Bowtie_screen1.png)
+![](new.figs/bowtie2.analysis.info.png)
 
 ### Input files
-
-Click on `bowtie2-2.2.4-align-ud - Input files`
 
 `Bowtie2 index name:` tells the aligner the name of the indexed genome file.  We have filled this in for you, it should read `TAIR10_chr_all`
 
@@ -60,19 +62,29 @@ Click on `bowtie2-2.2.4-align-ud - Input files`
 
 Leave `Left reads` and `Right reads` blank
 
-For `Unpaired reads`, we need to tell the aligner where to find the FASTQ files for your mutant.  click on `Browse` and then  navigate to `Shared with me`.  Scroll down and click on `sharmer`.
+For `Unpaired reads`, we need to tell the aligner where to find the FASTQ files for your mutant. First click on 'Browse'  
 
-![](figs/SharedSharmer.png)
+![](new.figs/bowtie2.input.1.png)
+
+ and then  navigate to `Shared with me`. 
+ 
+ ![](new.figs/bowtie2.input.2.png)
+
+  Scroll down and click on `sharmer`.
+
+ ![](new.figs/bowtie2.shared.png)
 
 Next click on `mcb160l`, and then the mutant you were assigned (`EMSXX`).  Finally select the `fastq` file (`EMSXX.fastq` ) and click OK.  (Instead of XX you will have two numbers).
 
-![](figs/EMS01fastq.png)
+![](new.figs/bowtie2.input.3.png)
 
 When you are done it should look something like this:
 
-![](figs/Bowtie2InputFiles.png)
+![](new.figs/bowtie2.input.4.png)
 
-The rest of the pages can be left with their default values.  It is time to launch the analysis!  Click "Launch Analysis" at the bottom right of the window.
+The rest of the pages can be left with their default values.  Click on the 'Next' button twice more to get to the Review and Launch page. 
+
+It is now time to launch the analysis!  Click "Launch Analysis" at the bottom right of the window.
 
 You can check on the status by clicking on the Analysis button and then pressing refresh.  Make sure that the status changes to `running` and check back after a few minutes to make sure it is still `running`.  If it switches to `failed` something went wrong.  It will take between 1 and 2 hours to complete, depending on which data set you are using.
 
@@ -113,36 +125,40 @@ Here we use a program called `FastQC`.
 
 Click on your `Apps` button and enter `fastqc` in the search bar.  Scroll until you find `FastQC 0.11.5 (multi-file)` by Upendra Kumar Devisetty.
 
-![](figs/FastQCAppSearch.png)
+![](new.figs/fastqc.search.png)
 
 Instead of using a QuickLaunch, just click on the app title to launch it.
 
-Click on `Input` and then "Add".  Navigate to the same fastqc file you used in the step above by clicking on `Shared with me`.  Scroll down and click on `sharmer`.
+Click 'Next' to get to the 'Analysis Parameters' page. Under the Input section, click on the 'Browse' button.
 
-![](figs/SharedSharmer.png)
+![](new.figs/fastqc.browse.png)
 
-Next click on `mcb160l`, and then the mutant you were assigned (`EMSXX`).  Finally select the `fastq` file (`EMSXX.fastq` ) and click OK.
+Navigate to the same fastqc file you used in the step above. The site should remember the same filepath you used previously.  (In case it doesn't, click on `Shared with me`.  Scroll down and click on `sharmer`. Next click on `mcb160l`, and then the mutant you were assigned (`EMSXX`).  Finally select the `fastq` file (`EMSXX.fastq` ) and click OK.)
 
 When you are done your input box should look like this:
 
-![](figs/FastQCInput.png)
+![](new.figs/fastqc.input.png)
 
-Now you can launch by clicking on `Launch Analysis`
+We don't need to change any other settings. Click 'Next' twice to get to the 'Review and Launch' page.  Lauch by clicking on `Launch Analysis`
 
 This can take 5 to 10 minutes to run.
 
 ### Look at the results.
 
-Click on the Analyses button and then click on refresh.  When the FastQC...analyses status switches to complete, click on the 3 dots to the right
+Click on the Analyses button and then click on refresh.  When the FastQC...analyses status switches to complete, click on the 3 dots filename.
 
-![](figs/FastQCout1.png)
+![](new.figs/fastqc.output.1.png)
 
-Next click on `Go to output folder`
+Next click on the file name listed next to 'Output folder'.
 
- ![](figs/FastQCout2.png)
+![](new.figs/fastqc.output.2.png)
 
- Finally, click on the `EMSXX_fastqc.html` file and it will open your report in a new window in your browser.
+ Finally, click on the `EMSXX_fastqc.html` file name
+ 
+ ![](new.figs/fastqc.output.3.png)
+
+ and it will open your report in a new window in your browser.
 
  #### Worksheet activities
 
- Answer questions #6 - 11 on your worksheet.
+ Answer questions #6 - 11 on your worksheet using the information in this report.
