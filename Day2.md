@@ -23,35 +23,45 @@ We have combined the bcftools mpileup, call, and SHOREmap convert into a single 
 
 Click on the `Apps` button and search for "BAM-to-SHORE".
 
-![](figs/bam2shore-select.png)
+![](new.figs/BAMtoSHORE.0.png) 
 
-Next click on the three buttons to the right of the `BAM-to-SHOREmap` application and then select `Quick Launch`.
+ Select that tool.  Click on the details button in the upper right corner.
 
-![](figs/bam2shore-quicklaunch1.png)
+![](new.figs/BAMtoSHORE.1.png) 
 
-Finally, select `MCB160L` from the quick launch menu and click on the arrowhead.
-![](figs/bam2shore-quicklaunch2.png)
+And then click on MCB160L and then the arrow to Quick Launch the application
 
-You can leave the first part (Analysis name and output folder as default)
-![](figs/bam2shore-input1.png)
+![](new.figs/BAMtoSHORE.2.png) 
+
+Click on the main 'BAM-to-SHOREmap3.8' page to prepare for your analysis.
+
 
 ### BCFtools 1.10 mpileup - Input data
 
-Click on `BCFtools 1.10 mpileup - Input data`
+You can leave the first part (Analysis name and output folder) with the default values.
+![](new.figs/BAM.setting.1.png)
 
-Here you want to use the BAM file that you created by running Bowtiew in the previous session.
+Click on 'Next' to go to the next page.
 
-Click the "add" button, navigate to your `analyses` folder, click on the `Bowtie2-Map-SortBam...` folder and then select the `output_sorted.bam` file and click OK
+Select the 'Browse' button to input the BAM file that you created by running Bowtie in the previous session.
 
-![](figs/bam2shore-input-bam.png)
+![](new.figs/BAM.setting.2.png)
+
+Navigate to your `analyses` folder by typing 'analyses' into the filepath after your username.
+
+![](new.figs/BAM.setting.3.png)
+
+Click on the `Bowtie2-Map-SortBam...` folder and then select the `output_sorted.bam` file and click OK
+
+![](new.figs/BAM.setting.4.png)
 
 Once you have it selected the window should look like this:
 
-![](figs/bam2shore-input-bam2.png)
+![](new.figs/BAM.setting.5.png)
 
 ### Launch it
 
-The remaining settings can be left at their default values.
+Click 'Next' two more times. The remaining settings can be left at their default values.
 
 Time to launch! Click `Launch Analysis`
 
@@ -63,21 +73,26 @@ As before, click on the `Analyses` button and click `refresh` a few times to mak
 
 Now that your analysis is running, let's look more closely at what we just did.
 
-Again, click on the three buttons to the right of the `BAM-to-SHOREmap` application and then select `Quick Launch`.
+Again, start BAM-to-SHOREmap3.8 using the quick launch settings. Search for the tool, select it, and click on the details button in the upper right corner.
 
-![](figs/bam2shore-quicklaunch1.png)
+![](new.figs/BAMtoSHORE.1.png) 
+
+And then click on MCB160L and then the arrow to Quick Launch the application
+
+![](new.figs/BAMtoSHORE.2.png) 
+
+Click on the main 'BAM-to-SHOREmap3.8' page.
 
 Then, select `MCB160L` from the quick launch menu and click on the arrowhead.
-![](figs/bam2shore-quicklaunch2.png)
 
-Please look at the settings in the indicated tabs to answer the below questions.
+Click the 'Next' button to check out the settings specified in the quick launch and use that information to answer the below questions.
 
 **Please answer the below questions in today's worksheet.**
 
-1. Click on the `bcftools mpileup - Output options` tab.  What is the selected output type? And from what you learned in today’s lecture, what do you think are the two most important types of information contained in this file?
-2.  Click on the `bcftools call - Consensus/variant calling options` tab. What is the default ‘variant calling method’?   And what is the other possible method
+1. Scroll down on page 2 ('Parameters') to see what was entered under `bcftools mpileup - Output options` tab.  What is the selected output type? And from what you learned in today’s lecture, what do you think are the two most important types of information contained in this output file?
+2.  Scroll down further to see what is listed under the `bcftools call - Consensus/variant calling options` section. What is the default ‘variant calling method’?  And what is the other possible method?
 3.  What do you think these two options might mean? And why do you think it is important that we used the default method here?  (_Keep in mind that the Illumina library that you are analyzing was generated from pooled genomic DNA extracted from ~200 different plants._)
-4. Click on the `SHOREmap convert - Parameters` tab. Find the ‘minimum AF’ that has been specified for you and write it down below. (_AF stands for ‘Allele Frequency’._) How do you think this relates to the ‘variant calling method’ specified in `bcftools call` and what do you think this parameter does?
+4. Scroll down further to see what is listed under the `SHOREmap convert - Parameters` section. Find the ‘minimum AF’ that has been specified for you and write it down below. (_AF stands for ‘Allele Frequency’._) How do you think this relates to the ‘variant calling method’ specified in `bcftools call` and what do you think this parameter does?
 
 ---
  ## Inspect your aligned reads using the UC Santa Cruz Genome Browser
@@ -90,48 +105,48 @@ The algorithms that we're working with examine both read quality (e.g. PHRED sco
 
  We'll get a sense for how this works by loading the BAM file you generated in our last lab in the [UC Santa Cruz Genome Browser](https://genome.ucsc.edu/) and looking at the aligned reads.
 
- 1) First, go to the Discovery Environment and **obtain a URL that links to your BAM file**.  Navigate to your `analyses` folder, click on the `Bowtie2-Map-SortBam...` folder and then select the `output_sorted.bam` file.
+ 1) First, go to the Discovery Environment and **obtain a URL that links to your BAM file**.  Navigate to your `analyses` folder, and click on the link to the output folder for `Bowtie2-Map-SortBam...` folder. 
 
-![](figs/bam_link.png)
+![](new.figs/BAM.url.1.png) 
 
-Select the 'Share' pulldown menu and select the 'View in Genome Browser' option.
-![](figs/bam_to_genome_browser.png)
+ Next,  then click on the three dots to the far right on the `output_sorted.bam` file line. Click on the 'Public Link(s)' button.
+
+ ![](new.figs/BAM.url.2.png) 
+
 
 You'll then get a pop-up window with a URL. **Paste this address into your worksheet (this is question 5**) and save it; you'll need it below (and you'll also need it again next week).
-![](figs/bam_url.png)
+ ![](new.figs/BAM.url.3.png) 
 
 
-2) Next, navigate to the [UC Santa Cruz Genome Browser](https://genome.ucsc.edu/) to **set up the display settings and load your custom data.**  Cick on `Genome Browser` under tools.
+2) Next, navigate to the [UC Santa Cruz Genome Browser](https://genome.ucsc.edu/) to **set up the display settings and load your custom data.**  Cick on `Genome Browser` in the header menu, then select 'Reset All User Settings'.
 
-![](figs/UCSC_intro.png)
-
-
-
-Type 'araTha1' into the search window; select the 'araTha1' listed under the **Assembly Hub: Plants** line.  _Be sure you select this one even though other lines have the same name!_
+![](new.figs/ucsc.gb.1.png)
 
 
-![](figs/assembly_hub-plants.png)
+Type 'arabidopsis' into the search window; select the 'thale cress (tair10.1 Columbia 2018)' genome listed under the **Assembly Hub: Plant assemblies** line.  _Be sure you select this one even though other lines have similar names!_
 
-The "Feb 2011 Thale cress" annotation should autopopulate in the 'Plants Hub Assembly' bar.  Be sure that this is the name diplayed before you click 'Go'!
-![](figs/correct_annotation.png)
+![](new.figs/ucsc.gb.2.png)
+
+The "thale cress (tair10.1 Columibia 2018)" annotation should autopopulate in the 'Plant assemblies Hub Assembly' bar.  Be sure that this is the name diplayed before you click 'Go'!
+![](new.figs/ucsc.gb.3.png)
 
 Warning - the browser window will look very confusing at first!  We will simplify the view.
 
 Click the 'hide all' button just below the white window.
 
-![](figs/ucsc_busy.png)
+![](new.figs/ucsc.gb.4.png)
 
 Ah, that's better! Now we'll add a custom track that includes the sequences from your mutant aligned to the reference genome.
 
 Click on the 'add custom tracks' button
-![](figs/custom_track.png)
+![](new.figs/ucsc.gb.5.png)
 And paste in the URL you obtained from the DE in the top box in the next window.  Click 'submit'.
-![](figs/paste_URL.png)
+![](new.figs/ucsc.gb.6.png)
 
-You should be taken to a page that looks like the below image.  Click on 'go'.
-![](figs/manage_custom_track.png)
+You should be taken to a page that looks like the below image.  Click on 'go to first annotation'.
+![](new.figs/ucsc.gb.7.png)
 
-3) **Examine your aligned reads.**  To see them, click on the 'plus' symbol on the left side of the blue bar labeled 'Custom'.  Choose the 'pack' display option under the display options pull-down menu.
+3) **Examine your aligned reads.**  To see them, click on the 'plus' symbol on the left side of the blue bar labeled 'Custom Tracks'.  Choose the 'pack' display option under the display options pull-down menu.
 
 Write in the locus name *XCT* in the search bar near the top of display, just to restrict your view to a small part of the genome.
 
@@ -139,13 +154,15 @@ Then click the 'refresh' button on the rights side of the blue 'Custom' bar.
 
 ![](figs/view_reads.png)
 
+Click on the XCT hyperlink for "RefSeq mRNAs mapped to this assembly".  You should now see the genome browser page again.
+
 Navigate within the Genome Browser to answer the below questions on your worksheet. Remember to use the navigation controls at the top of the page zoom in and out, and to move your field of view to the left and the right.
 
 **More worksheet questions**
 
 6) What do you think the vertical red line at the top of the page represents? (*Hint: try entering new position coordinates in the search bar at the top of the page.*)
-7) What do the brown rectangles separated by horizontal lines at the bottom of the plot represent?  Why are there small arrowheads on these horizontal lines?
-8) Note the skinny brown rectangles at the farthest left and right portions of each gene model. What do these represent? (*Their positions should give you a big hint.*)
+7) What do the red rectangles separated by horizontal lines at the bottom of the plot represent?  Why are there small arrowheads on these horizontal lines?
+8) Note the skinny red rectangles at the farthest left and right portions of each gene model. What do these represent? (*Their positions should give you a big hint.*)
 9) The brown and blue boxes in the middle of the plot represent individual sequencing reads from your library.  Click on a few to see the corresponding portion of the BAM file for each read.  Why are some reads indicated in blue and some in brown?
 
 Go back to your browswer view. Zoom in to the base level (see 'base' button just to the left of 'zoom out' in the navigation area). Find a sequence read (either a brown or a blue rectangle) that has white nucleotide displayed within it. Click on this read. (*You may have to scan to left or right to find one.*)
@@ -161,10 +178,10 @@ Go back to your browswer view. Zoom in to the base level (see 'base' button just
 
 You will generate a new custom track in the UC Santa Cruz Genome Browser to view  Ler reads generated in a separate experiment.  On your Genome Browser page, click the 'manage custom tracks' button.
 
-![](figs/manage_tracks.png)
+![](new.figs/ucsc.gb.ler.1.png)
 
 Now, click on the 'add custom tracks' buttons in the next window.
-![](figs/add_Ler_tracks.png)
+![](new.figs/ucsc.gb.ler.2.png)
 
 And then paste this URL
 
@@ -172,23 +189,23 @@ And then paste this URL
 
  into the to entry box.  It should look like the below image.  Hit 'submit'.
 
-![](figs/add_Ler_tracks_submit.png)
+![](new.figs/ucsc.gb.ler.3.png)
 
-Now on the next page click 'go' to return to the Genome Browser.
+Now on the next page click 'go to first annotation' to return to the Genome Browser.
 
-![](figs/back_to_GB.png)
+![](new.figs/ucsc.gb.ler.4.png)
 
 Change the settings under the blue bar labeled 'Custom' (as you did previously). Hide your F2 BAM file and set the Ler BAM file to display as 'pack'.  Click 'refresh'.
 
 Type in the gene name ELF4 in the top search bar and click 'go'.
 
-![](figs/elf4_gb.png)
+![](new.figs/ucsc.gb.ler.5.png)
 
-Choose the top link (AT2G40080.1) on the next page.
+Choose the top RefSeq mRNA link (ELF4 - NC_003071.7:16734294-16734875) on the next page.
 
-Using the zoom and scan controls, find a position within the ELF4 coding region where you think there may be a true sequence polymorphism (SNP) between Ler and Col.
+Using the zoom and scan controls, find a position within the ELF4 coding region where you think there may be two true sequence polymorphism (SNP) between Ler and Col within 50 bp of each other.
 
-13) Click on a read to see the alignment between Col and Ler around your putative SNP.  Write out the sequence of the candidate SNP and that of the 3 bases on either side (do this for both your sequence read and the reference). Circle or highlight the mismatched bases. Explain why you think this may be a true polymorphism (SNP) rather than a sequencing error.
+13) Click on a read to see the alignment between Col and Ler around these putative SNPs.  Write out the sequence of the first candidate SNP and that of the 3 bases on either side (do this for both your sequence read and the reference). Circle or highlight the mismatched bases. Explain why you think this may be a true polymorphism (SNP) rather than a sequencing error.
 
 Zoom out with the 10x button. Scan left and right and examine the frequency of continuous vertical red lines; these are positions where the sequences of most/all reads fail to match the reference genome.
 
