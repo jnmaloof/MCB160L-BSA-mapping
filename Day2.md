@@ -123,11 +123,11 @@ You'll then get a pop-up window with a URL. **Paste this address into your works
 ![](new.figs/ucsc.gb.1.png)
 
 
-Type 'arabidopsis' into the search window; select the 'thale cress (tair10.1 Columbia 2018)' genome listed under the **Assembly Hub: Plant assemblies** line.  _Be sure you select this one even though other lines have similar names!_
+Type 'arabidopsis' into the search window; select the 'TAIR 10, Accession:GCA_000001735.1 (araTha1)' genome listed under the **ReMap 2020 Regulatory Atlas** line.  _Be sure you select this one even though other lines have similar names!_
 
 ![](new.figs/ucsc.gb.2.png)
 
-The "thale cress (tair10.1 Columibia 2018)" annotation should autopopulate in the 'Plant assemblies Hub Assembly' bar.  Be sure that this is the name diplayed before you click 'Go'!
+The "TAIR10, Accession: GCA_000001735.1" annotation should autopopulate in the 'Plant assemblies Hub Assembly' bar.  Be sure that this is the name diplayed before you click 'Go'!
 ![](new.figs/ucsc.gb.3.png)
 
 Warning - the browser window will look very confusing at first!  We will simplify the view.
